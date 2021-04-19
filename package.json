@@ -1,0 +1,50 @@
+{
+  "name": "newgazz",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Ecommerce website like amazon",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basir/amazona.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basir/amazona/issues"
+  },
+  "homepage": "https://github.com/basir/amazona#readme",
+  "dependencies": {
+    "@emotion/core": "^10.1.1",
+    "@emotion/react": "^11.0.0",
+    "@material-ui/core": "^5.0.0-alpha.28",
+    "@sendgrid/mail": "^7.4.2",
+    "aws-sdk": "^2.875.0",
+    "bcryptjs": "^2.4.3",
+    "correios-brasil": "^2.1.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^5.10.7",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "node-correios": "^3.0.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.21.2",
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
+  }
+}
