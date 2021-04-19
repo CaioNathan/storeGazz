@@ -206,8 +206,8 @@ export default function OrderScreen(props) {
 
                         style  =  { { color : 'white' } } 
                         options={{
-                          clientId: "############"
-                          ,currency:"BRL"
+                          locale: 'pt_BR',
+                       currency:"BRL"
                         }}
 
                         
