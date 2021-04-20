@@ -110,23 +110,23 @@ orderRouter.put(
         email_address: req.body.email_address,
       };
       const updatedOrder = await order.save();
-      mailgun()
-        .messages()
-        .send(
-          {
-            from: 'Amazona <amazona@mg.yourdomain.com>',
-            to: `${order.user.name} <${order.user.email}>`,
-            subject: `New order ${order._id}`,
-            html: payOrderEmailTemplate(order),
-          },
-          (error, body) => {
-            if (error) {
-              console.log(error);
-            } else {
-              console.log(body);
-            }
-          }
-        );
+
+      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+ 
+        const msg = {
+          from: 'nathansallenave@gmail.com',
+          to: updatedOrder.user.email,
+          subject: `Gazz - Pagamento Confirmado`,
+          html: payOrderEmailTemplate(updatedOrder),
+        }
+     
+        try {
+            const result = await sgMail.send(msg);
+            console.log('Email sent', result);
+        }
+        catch (error) {
+            console.error(error)
+        }
       res.send({ message: 'Order Paid', order: updatedOrder });
     } else {
       res.status(404).send({ message: 'Order Not Found' });

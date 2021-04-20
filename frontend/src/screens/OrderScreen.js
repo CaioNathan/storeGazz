@@ -184,6 +184,7 @@ export default function OrderScreen(props) {
                 </li>
               )
               }
+
               { !order.isPaid  && order.paymentMethod ==='PayPal' && (
 
                                   
@@ -207,7 +208,7 @@ export default function OrderScreen(props) {
                         style  =  { { color : 'white' } } 
                         options={{
                           locale: 'pt_BR',
-                      currency:"BRL"
+                          currency:"BRL"
                         }}
 
                         
@@ -222,11 +223,7 @@ export default function OrderScreen(props) {
 
 
                }
-              
-
-
-
-            
+                        
             
               {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                 <li>

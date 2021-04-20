@@ -54,15 +54,17 @@ export const mailgun = () =>
 export const payOrderEmailTemplate = (order) => {
   return `<h1>Agradecemos o seu pedido</h1>
   <p>
-  Hi ${order.user.name},</p>
-  <p>Seu pedido foi processado.</p>
-  <h2>[Order ${order._id}] (${order.createdAt.toString().substring(0, 10)})</h2>
+  Olá ${order.user.name},</p>
+  <p>Seu pacote está sendo preparado para envio. </p>
+  <p> Após o processamento do pacote em até 48 horas úteis você receberá um e-mail com o código de rastreio de seu pedido. </p>
+  </p>
+  <h2>[Order ${order._id}] </h2>
   <table>
   <thead>
   <tr>
   <td><strong>Produto</strong></td>
-  <td><strong>Quantity</strong></td>
-  <td><strong align="right">Price</strong></td>
+  <td><strong>Quantidade</strong></td>
+  <td><strong align="right">Preço</strong></td>
   </thead>
   <tbody>
   ${order.orderItems
@@ -79,27 +81,24 @@ export const payOrderEmailTemplate = (order) => {
   </tbody>
   <tfoot>
   <tr>
-  <td colspan="2">Items Price:</td>
-  <td align="right"> $${order.itemsPrice.toFixed(2)}</td>
+  <td colspan="2">Items :</td>
+  <td align="right"> R$${order.itemsPrice.toFixed(2)}</td>
   </tr>
   <tr>
-  <td colspan="2">Tax Price:</td>
-  <td align="right"> $${order.taxPrice.toFixed(2)}</td>
+  <td colspan="2">Frete:</td>
+  <td align="right"> R$${order.taxPrice.toFixed(2)}</td>
+  </tr>
+  
+  <tr>
+  <td colspan="2"><strong>Total:</strong></td>
+  <td align="right"><strong> R$${order.totalPrice.toFixed(2)}</strong></td>
   </tr>
   <tr>
-  <td colspan="2">Shipping Price:</td>
-  <td align="right"> $${order.shippingPrice.toFixed(2)}</td>
-  </tr>
-  <tr>
-  <td colspan="2"><strong>Total Price:</strong></td>
-  <td align="right"><strong> $${order.totalPrice.toFixed(2)}</strong></td>
-  </tr>
-  <tr>
-  <td colspan="2">Payment Method:</td>
+  <td colspan="2">Forma de Pagamento:</td>
   <td align="right">${order.paymentMethod}</td>
   </tr>
   </table>
-  <h2>Shipping address</h2>
+  <h2>Endereço de entrega</h2>
   <p>
   ${order.shippingAddress.fullName},<br/>
   ${order.shippingAddress.address},<br/>
@@ -109,7 +108,7 @@ export const payOrderEmailTemplate = (order) => {
   </p>
   <hr/>
   <p>
-  Thanks for shopping with us.
+  Obrigado por Comprar conosco! 
   </p>
   `;
 };
@@ -117,16 +116,14 @@ export const payOrderEmailTemplate = (order) => {
 export const tokenSendTemplete = (token) => {
   return  `<h1>Esqueseu sua senha?</h1>
   <p> Utilize o token de verificação para recuperar sua senha: <a href='#'> ${token} </a>   </p> 
-  
-  
-  
+   
   `
   
 }
 
 export const OrderEmailTemplate = (order) => {
   return `<h1>Agradecemos a preferencia</h1>
-  <p> Olá ${order.shippingAddress.fullName.split(' ', 1)}, obrigado por escolher a GAZZ</p>
+  <p> Olá ${order.shippingAddress.fullName.split(' ', 1)}, obrigado por escolher a GAZZ.</p>
   <p>Confira abaixo os detalhes do seu pedido [ ID: ${order._id}]  </p>
   <h2> Pedido ${order._id} </h2>
   <table>
