@@ -159,12 +159,7 @@ export default function OrderScreen(props) {
                   <div>R${order.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
-              <li>
-                <div className="row">
-                  <div>Entrega</div>
-                  <div>R${order.shippingPrice.toFixed(2)}</div>
-                </div>
-              </li>
+             
               <li>
                 <div className="row">
                   <div>Frete</div>
@@ -182,23 +177,28 @@ export default function OrderScreen(props) {
                 </div>
               </li>
              
-              {!order.isPaid  && order.paymentMethod ==='Tranfer' ? (
+              {!order.isPaid  && order.paymentMethod ==='Transferência/Pix' && (
                 <li>
                   <p> Dados da Conta para fazer a Transferência</p>
               
                 </li>
-              ):(
-                <li>
+              )
+              }
+              { !order.isPaid  && order.paymentMethod ==='PayPal' && (
+
+                                  
+                  <li>
                   {!sdkReady ? (
                     <LoadingBox></LoadingBox>
-                  ) : (
+                  ) :  (
                     <>
+
                       {errorPay && (
                         <MessageBox variant="danger">{errorPay}</MessageBox>
                       )}
                       {loadingPay && <LoadingBox></LoadingBox>}
 
-                      <PayPalButton
+                      { <PayPalButton
                         
                         amount={order.totalPrice}
                                                 
@@ -207,21 +207,27 @@ export default function OrderScreen(props) {
                         style  =  { { color : 'white' } } 
                         options={{
                           locale: 'pt_BR',
-                       currency:"BRL"
+                      currency:"BRL"
                         }}
 
                         
-                      ></PayPalButton>
+                      ></PayPalButton> }
+
+                      
                     </>
                   )}
+
+                  </li>
+                  )
+
+
+               }
               
-                </li>
-              )
 
 
 
             
-            }
+            
               {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                 <li>
                   {loadingDeliver && <LoadingBox></LoadingBox>}
@@ -237,15 +243,15 @@ export default function OrderScreen(props) {
                   </button>
                 </li>
               )}
-              {userInfo.isAdmin && !order.isPaid && order.paymentMethod ==='Tranfer' && (
+              {userInfo.isAdmin && !order.isPaid && order.paymentMethod ==='Transferência/Pix' && (
                 <li>
                   
                   <button
                     type="button"
                     className="primary block"
-                    
-                  >
-                   Pagamento Realizado
+                    onClick={successPaymentHandler}
+                   >
+                   Pagamento Recebido
                   </button>
                 </li>
               )}

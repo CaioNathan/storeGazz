@@ -16,6 +16,10 @@ export default function PlaceOrderScreen(props) {
   if (!cart.paymentMethod) {
     props.history.push('/payment');
   }
+
+
+  const [cfrete, setCfrete] = useState(false)
+
   const orderCreate = useSelector((state) => state.orderCreate);
   const { loading, success, error, order } = orderCreate;
   const toPrice = (num) => Number(num.toFixed(2)); // 5.123 => "5.12" => 5.12
@@ -27,7 +31,15 @@ export default function PlaceOrderScreen(props) {
   cart.totalPrice = cart.itemsPrice  + cart.shippingPrice;
   const dispatch = useDispatch();
   const placeOrderHandler = () => {
-    dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
+    if(!cfrete){
+      alert('Calcule o valor do frete')
+    
+    }
+    else{
+      dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
+   }
+      
+    
   };
 
  
@@ -38,6 +50,7 @@ export default function PlaceOrderScreen(props) {
     if(frete.data.Valor !== '0,00'){
       setEntrega(frete.data.Valor)
       alert(`Taxa de entrega:${frete.data.Valor}`);
+      setCfrete(true);
     }else{
       alert(frete.data.MsgErro)
     }

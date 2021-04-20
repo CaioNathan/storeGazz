@@ -42,7 +42,7 @@ export default function PaymentMethodScreen(props) {
             <input
               type="radio"
               id="tranfer"
-              value="Tranfer"
+              value="Transferência/Pix"
               name="paymentMethod"
               required
               onChange={(e) => setPaymentMethod(e.target.value)}
