@@ -70,8 +70,8 @@ export default function SearchScreen(props) {
             }}
           >
             <option value="newest">Mais novos</option>
-            <option value="lowest">Maior Preço</option>
-            <option value="highest">Menor Preço</option>
+            <option value="lowest">Menor Preço</option>
+            <option value="highest">Maior Preço</option>
             
           </select>
         </div>

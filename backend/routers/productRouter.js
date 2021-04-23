@@ -49,6 +49,7 @@ productRouter.get(
       ...priceFilter,
       ...ratingFilter,
     })
+    .sort(sortOrder)
       
       
     res.send({ products});
