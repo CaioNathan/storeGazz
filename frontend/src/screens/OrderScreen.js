@@ -205,9 +205,9 @@ export default function OrderScreen(props) {
                                                 
                         onSuccess={successPaymentHandler}
 
-                        style  =  { { color : 'white' } } 
+                        style  =  { { color :'white'} } 
                         options={{
-                          locale: 'pt_BR',
+                          locale:"pt_BR",
                           currency:"BRL"
                         }}
 

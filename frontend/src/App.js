@@ -334,8 +334,12 @@ function App() {
         </main>
         <footer className="footer"> 
 
+     
+
         <Link to="/" >
       <img src={require("./assets/gazc.png")} className="Logo2" alt="logo" />  </Link>
+
+      
 
         <div className="block">
 
@@ -343,7 +347,7 @@ function App() {
 
 
         <div> 
-      <a href='https://www.wa.me/5561993828838'> <i className="fa fa-whatsapp" aria-hidden="true"> </i> </a>
+      <a href='https://api.whatsapp.com/send/?phone=5561993828838&text&app_absent=0'> <i className="fa fa-whatsapp" aria-hidden="true"> </i> </a>
 
   <a href='https://www.instagram.com/gazzstore/'>   <i className="fa fa-instagram" aria-hidden="true"></i> </a> 
 
