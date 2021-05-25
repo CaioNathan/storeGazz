@@ -102,10 +102,17 @@ color: #4e6286;
   font-size: 28px;
 }
 
+.fa-remove{
+  margin-top: 8px;
+  margin-left: 150px;
+  margin-bottom: 0;
+  color: rgb(235, 6, 6);
+}
+
 
 
 @media (max-width: 1000px) {
-
+  
 
 
   .pesquisa{

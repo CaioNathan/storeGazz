@@ -11,14 +11,17 @@ import { listProductCategories } from '../actions/productActions';
 
 export default function HomeScreen(props) {
 
-  const [display,setDisplay]= useState('');
+  const [display,setDisplay]= useState('none');
+  const [padding,setPadding]= useState('64');
 
 function w3_open() {
   setDisplay('block')
+  setPadding('32')
 }
  
 function w3_close() {
   setDisplay('none')
+  
 }
 
 
@@ -71,10 +74,12 @@ useEffect(() => {
   <div class="w3-container w3-display-container w3-padding-16">
   
     <img src={require("../assets/gazc.png")} className='logo' /> 
+
+    <i onClick={w3_close} class="fa fa-remove" style={{'display':`${display}`}} > </i>
     
   </div>
-  <div class="w3-padding-64 w3-large w3-text-grey" >
-    <i onClick={w3_close} class="fa fa-remove w3-right" style={{'display':`${display}`}}> </i>
+  <div class={`w3-padding-${padding} w3-large w3-text-grey` }>
+   
   
     <a href="/search/category/Camisetas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Camisetas </a>
     <a href="/search/category/Bermudas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Bermudas</a>
