@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+
+import { Link } from 'react-router-dom';
+import CheckoutSteps from '../components/CheckoutSteps';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
-import CheckoutSteps from '../components/CheckoutSteps';
 
-export default function ShippingAddressScreen(props) {
+
+
+export default function Entrega(props) {
+
   const userSignin = useSelector((state) => state.userSignin);
 
   const { userInfo } = userSignin;
@@ -25,18 +30,9 @@ export default function ShippingAddressScreen(props) {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    const newLat = addressMap ? addressMap.lat : lat;
-    const newLng = addressMap ? addressMap.lng : lng;
-    if (addressMap) {
-      setLat(addressMap.lat);
-      setLng(addressMap.lng);
-    }
+    
     let moveOn = true;
-    if (!newLat || !newLng) {
-      moveOn = window.confirm(
-        'Não adicionou local no mapa. Continuar?'
-      );
-    }
+    
     if (moveOn) {
       dispatch(
         saveShippingAddress({
@@ -45,37 +41,27 @@ export default function ShippingAddressScreen(props) {
           city,
           postalCode,
           country,
-          lat: newLat,
-          lng: newLng,
+          
         })
       );
-      props.history.push('/payment');
+      props.history.push('/pagamento');
     }
   };
-  const chooseOnMap = () => {
-    dispatch(
-      saveShippingAddress({
-        fullName,
-        address,
-        city,
-        postalCode,
-        country,
-        lat,
-        lng,
-      })
-    );
-    props.history.push('/map');
-  };
+  
+
   return (
     <div>
-      <CheckoutSteps step1 step2></CheckoutSteps>
-      <form className="form" onSubmit={submitHandler}>
-        <div>
-          <h1>Entrega</h1>
-        </div>
-        <div>
-          <label htmlFor="fullName">Nome Completo</label>
+       <CheckoutSteps step1 step2></CheckoutSteps>
+
+<div class="w3-container" id="contact" >
+    <h1 class="w3-center w3-text-blue"><b>Entrega</b></h1>
+    <hr  class="w3-round"/>
+   
+    <form onSubmit={submitHandler} >
+      <div class="w3-section">
+      <label htmlFor="fullName">Nome Completo</label>
           <input
+          class="w3-input w3-border"
             type="text"
             id="fullName"
             placeholder="Nome"
@@ -83,64 +69,64 @@ export default function ShippingAddressScreen(props) {
             onChange={(e) => setFullName(e.target.value)}
             required
           ></input>
-        </div>
-        <div>
-          <label htmlFor="address">Endereço</label>
-          <input
-            type="text"
+      </div>
+      <div class="w3-section">
+        <label>Endereço</label>
+        <input class="w3-input w3-border" type="text"
             id="address"
             placeholder="Endereço"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="city">Cidade</label>
-          <input
-            type="text"
+            required/>
+      </div>
+
+      <div class="w3-section">
+        <label>Cidade</label>
+        <input class="w3-input w3-border" type="text"
             id="city"
             placeholder="Cidade"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="postalCode">CEP</label>
-          <input
-            type="text"
+            required />
+      </div>
+
+      <div class="w3-section">
+        <label>CEP</label>
+        <input class="w3-input w3-border" ttype="text"
             id="postalCode"
             placeholder="CEP"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="country">País</label>
-          <input
-            type="text"
-            id="country"
-            placeholder="País"
+            required/>
+      </div>
+
+      <div class="w3-section">
+        <label>Estado</label>
+        <input class="w3-input w3-border" ttype="text"
+            id="estado"
+            placeholder="Estado"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="chooseOnMap">Localização</label>
-          <button type="button" onClick={chooseOnMap}>
-            Escolher no mapa
-          </button>
-        </div>
-        <div>
-          <label />
-          <button className="primary" type="submit">
-            Continuar
-          </button>
-        </div>
-      </form>
+            required/>
+      </div>
+
+     
+
+     
+      
+      <h3 className='w3-center'> 
+      <Link to='/carrinho'>
+      <button class="w3-button" >  Voltar </button>
+      </Link>
+            
+             <button class="w3-button w3-green ">   Prosseguir </button>
+             
+             </h3>
+    </form>  
+  </div>
+
+
+
     </div>
   );
 }

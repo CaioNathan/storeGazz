@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux';
 const libs = ['places'];
 const defaultLocation = { lat: 45.516, lng: -73.56 };
 
-export default function MapScreen(props) {
+export default function Mapa(props) {
   const [googleApiKey, setGoogleApiKey] = useState('');
   const [center, setCenter] = useState(defaultLocation);
   const [location, setLocation] = useState(center);
@@ -93,7 +93,7 @@ export default function MapScreen(props) {
   };
 
   return googleApiKey ? (
-    <div className="full-container">
+    <div className="full-container" >
       <LoadScript libraries={libs} googleMapsApiKey={googleApiKey}>
         <GoogleMap
           id="smaple-map"

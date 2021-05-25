@@ -7,18 +7,15 @@ export default function SearchBox(props) {
     props.history.push(`/search/name/${name}`);
   };
   return (
-    <form className="search" onSubmit={submitHandler}>
-      <div className="row">
+    <form  onSubmit={submitHandler} >
+      <div >
         <input
-        placeholder="O que voce procura?"
           type="text"
           name="q"
           id="q"
           onChange={(e) => setName(e.target.value)}
         ></input>
-        <button className="primary" type="submit">
-          <i className="fa fa-search"></i>
-        </button>
+        <i class="fa fa-search"></i>
       </div>
     </form>
   );
