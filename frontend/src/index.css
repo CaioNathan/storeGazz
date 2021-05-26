@@ -55,6 +55,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
 .imgLogin{
   width: 40%;
 }
+.imgLogin2{
+  width: 22%;
+}
 
 .row {
   display: flex;
@@ -96,6 +99,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
 }
 
 .fa-bars{
+  margin-right: 12px;
   color: white;
   font-size: 28px;
 }
@@ -112,10 +116,15 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
 @media (max-width: 1000px) {
   
   .w3-bar{
-    height: 100px;
+    height: 80px;
   }
-  .header{
-    margin-top: 40px;
+ 
+  .search{
+    border-radius: 0.1rem;
+    border: 1px solid;
+    height: 24px;
+    
+    width:150px;
   }
 
   .pesquisa{
@@ -125,7 +134,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
   .imgLogin{
     width: 80%;
   }
+  .imgLogin2{
+    width: 50%;
+  }
   .logo{
+  
    width: 70%;
 
   }

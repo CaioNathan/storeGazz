@@ -8,6 +8,12 @@ import Pagamento from './screens/Pagamento';
 import Finalizar from './screens/Finalizar';
 import Pedido from './screens/Pedido';
 import Login from './screens/Login';
+import Register from './screens/Register';
+import Recuperar from './screens/Recuperar';
+import NovaSenha from './screens/NovaSenha';
+import Dash from './screens/Dash';
+import AdminRoute from './components/AdminRoute';
+import Pesquisa from './screens/Pesquisa';
 
 
 function App() {
@@ -29,6 +35,34 @@ function App() {
           <Route path="/finalizar" component={Finalizar} ></Route>
           <Route path="/pedido/:id" component={Pedido} ></Route>
           <Route path="/login" component={Login} ></Route>
+          <Route path="/register" component={Register} ></Route>
+          <Route path="/recuperar" component={Recuperar} ></Route>
+          <Route path="/novasenha" component={NovaSenha} ></Route>
+          <Route
+            path="/search/name/:name?"
+            component={Pesquisa}
+            exact
+          ></Route>
+          <Route
+            path="/search/category/:category"
+            component={Pesquisa}
+            exact
+          ></Route>
+          <Route
+            path="/search/category/:category/name/:name"
+            component={Pesquisa}
+            exact
+          ></Route>
+          <Route
+            path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
+            component={Pesquisa}
+            exact
+          ></Route>
+          <AdminRoute
+            path="/dash"
+            component={Dash}
+            exact
+          ></AdminRoute>
 
          
         </main>

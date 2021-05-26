@@ -5,6 +5,8 @@ import Product from '../components/Product';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProductCategories } from '../actions/productActions';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 
 
@@ -12,11 +14,11 @@ import { listProductCategories } from '../actions/productActions';
 export default function HomeScreen(props) {
 
   const [display,setDisplay]= useState('none');
-  const [padding,setPadding]= useState('64');
+ 
 
 function w3_open() {
   setDisplay('block')
-  setPadding('32')
+  
 }
  
 function w3_close() {
@@ -32,9 +34,13 @@ const { cartItems } = cart;
 const userSignin = useSelector((state) => state.userSignin);
 const { userInfo } = userSignin;
 const dispatch = useDispatch();
-const signoutHandler = () => {
-  dispatch(signoutHandler());
-};
+
+function logout(){
+  localStorage.removeItem('userInfo');
+  localStorage.removeItem('cartItems');
+  localStorage.removeItem('shippingAddress');
+  document.location.href = '/'
+}
 
 
 
@@ -73,19 +79,78 @@ useEffect(() => {
   <div class="w3-container w3-display-container w3-padding-16">
     <i onClick={w3_close} class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
     <img src={require("../assets/gazc.png")} className='logo' />
+    
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style={{"font-weight":"bold"}}>
-  <a href="/search/category/Camisetas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Camisetas </a>
-    <a href="/search/category/Bermudas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Bermudas</a>
-   
-    
-    <a href="/search/category/Bonés/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1'" class="w3-bar-item w3-button">Bonés</a>
-    <a href="#" class="w3-bar-item w3-button">Casacos</a>
-    <a href="#" class="w3-bar-item w3-button">Calças</a>
-    <a href="/search/category/Tênis/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Tenis</a>
- 
+
+
+
+
+  {loadingCategories ? (
+              <LoadingBox></LoadingBox>
+            ) : errorCategories ? (
+              <MessageBox variant="danger">{errorCategories}</MessageBox>
+            ) : (
+              
+              categories.map((c) => (
+                
+                  <Link
+                    to={`/search/category/${c}`}
+                    class="w3-bar-item w3-button"
+                    
+                  >
+                    {c}
+                  </Link>
+               
+              ))
+            )}
+  
   </div>
-  <Link to='login' class="w3-bar-item w3-button w3-padding">Entrar</Link>
+
+  {
+          userInfo ? (
+            <div className="dropdown">
+
+            <Link to='#' class="w3-bar-item w3-button w3-padding"> 
+              {userInfo.name} <i className="fa fa-user-o"> </i> {''} 
+              </Link>
+              
+                  <Link class="w3-bar-item w3-button w3-padding" to="/profile"> Conta </Link>
+
+                        {userInfo && userInfo.isAdmin &&  (
+                <div className="dropdown">
+                
+                
+                  <Link class="w3-bar-item w3-button w3-padding" to="/dash"> Admin   </Link> 
+                  
+                
+                
+
+                </div>
+
+
+              )}
+
+               
+                  <Link class="w3-bar-item w3-button w3-padding" to="/orderhistory"> Meus pedidos </Link>
+                
+
+              
+                <Link class="w3-bar-item w3-button w3-padding"  onClick={logout}>Sair </Link>
+                
+
+            
+
+
+
+            </div>
+          ) :
+          (
+            <Link to='login' class="w3-bar-item w3-button w3-padding">Entrar</Link>
+          )
+        }
+
+        
    
  <p>
   <i class="fa fa fa-whatsapp w3-hover-opacity w3-xlarge w3-margin-left"></i>
@@ -102,7 +167,7 @@ useEffect(() => {
 </nav>
 
 <header class="w3-bar w3-top w3-hide-large  w3-xlarge">
-  <div class="w3-bar-item w3-padding-24 w3-wide">
+  <div class="w3-bar-item  w3-wide">
   <img src={require("../assets/gazc.png")} className='logo' /> 
   </div>
   <a class="w3-bar-item  w3-padding-24 w3-right" onClick={w3_open}><i class="fa fa-bars"></i></a>
@@ -121,6 +186,10 @@ useEffect(() => {
   <header class="w3-container w3-xlarge">
   <p class="w3-right header">
     
+     
+
+      <input className='search'hidden='true'></input><i class="fa fa-search w3-margin-right" ></i>
+
       <Link to='/carrinho'>
       <i class="fa fa-shopping-cart w3-margin-right"> {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
@@ -129,8 +198,6 @@ useEffect(() => {
 
 
       <i class="fa fa-user-o w3-margin-right"></i>
-
-      <i class="fa fa-search w3-margin-right" ></i>
       
       
       </p>
