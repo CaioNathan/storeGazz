@@ -63,9 +63,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
   align-items: center;
 }
 
-.fa-facebook-official{
-color: #4e6286;
-}
+
 
 .success {
   color: #20a020;
@@ -103,7 +101,7 @@ color: #4e6286;
 }
 
 .fa-remove{
-  margin-top: 8px;
+  margin-top: 15px;
   margin-left: 150px;
   margin-bottom: 0;
   color: rgb(235, 6, 6);
@@ -113,7 +111,12 @@ color: #4e6286;
 
 @media (max-width: 1000px) {
   
-
+  .w3-bar{
+    height: 100px;
+  }
+  .header{
+    margin-top: 40px;
+  }
 
   .pesquisa{
     max-width: 180px;
@@ -126,14 +129,7 @@ color: #4e6286;
    width: 70%;
 
   }
-  .w3-top{
-    top:0;
-  }
-  .w3-top{
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-  }
+  
   .w3-hide-large{
     margin-bottom:83px;
   }

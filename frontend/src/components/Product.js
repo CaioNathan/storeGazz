@@ -7,6 +7,7 @@ export default function Product(props) {
   return (
       <div>
 
+
  
     <div class="w3-col l3 s6">
       <div class="w3-container">

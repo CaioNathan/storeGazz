@@ -69,19 +69,13 @@ useEffect(() => {
   return (
     <div>
 
-
-<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" id="mySidebar" style={{'display':`${display}`}}>
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style={{"z-index":"3","width":"250px",'display':`${display}`}} id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
-  
-    <img src={require("../assets/gazc.png")} className='logo' /> 
-
-    <i onClick={w3_close} class="fa fa-remove" style={{'display':`${display}`}} > </i>
-    
+    <i onClick={w3_close} class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <img src={require("../assets/gazc.png")} className='logo' />
   </div>
-  <div class={`w3-padding-${padding} w3-large w3-text-grey` }>
-   
-  
-    <a href="/search/category/Camisetas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Camisetas </a>
+  <div class="w3-padding-64 w3-large w3-text-grey" style={{"font-weight":"bold"}}>
+  <a href="/search/category/Camisetas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Camisetas </a>
     <a href="/search/category/Bermudas/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Bermudas</a>
    
     
@@ -89,8 +83,8 @@ useEffect(() => {
     <a href="#" class="w3-bar-item w3-button">Casacos</a>
     <a href="#" class="w3-bar-item w3-button">Calças</a>
     <a href="/search/category/Tênis/name/all/min/0/max/0/rating/0/order/newest/pageNumber/1" class="w3-bar-item w3-button">Tenis</a>
+ 
   </div>
-
   <Link to='login' class="w3-bar-item w3-button w3-padding">Entrar</Link>
    
  <p>
@@ -107,48 +101,44 @@ useEffect(() => {
  
 </nav>
 
-
 <header class="w3-bar w3-top w3-hide-large  w3-xlarge">
   <div class="w3-bar-item w3-padding-24 w3-wide">
-
   <img src={require("../assets/gazc.png")} className='logo' /> 
   </div>
-  <a  class="w3-bar-item w3-button w3-padding-24 w3-right" onClick={w3_open}><i class="fa fa-bars w3-margin-right"></i></a>
+  <a class="w3-bar-item  w3-padding-24 w3-right" onClick={w3_open}><i class="fa fa-bars"></i></a>
 </header>
 
-<div class="w3-overlay w3-hide-large" onClick={w3_close} title="close side menu" id="myOverlay" style={{'display':`${display}`}}></div>
 
-<div class="w3-main" >
+<div class="w3-overlay w3-hide-large" onClick={w3_close} style={{"cursor":"pointer"}} title="close side menu" id="myOverlay"></div>
 
 
-  <div class="w3-hide-large" style={{"margin-top":"120px"}} ></div>
+<div class="w3-main" style={{"margin-left":"250px"}}>
+
+
+  <div class="w3-hide-large" style={{"margin-top":"83px"}}></div>
   
-
+ 
   <header class="w3-container w3-xlarge">
-   
-    <p class="w3-right">
-
-   
-   
-     
-     <Link to='/carrinho'>
-     <i class="fa fa-shopping-cart w3-margin-right"> {cartItems.length > 0 && (
+  <p class="w3-right header">
+    
+      <Link to='/carrinho'>
+      <i class="fa fa-shopping-cart w3-margin-right"> {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )} </i>
-     </Link>
-     
-    
-     <i class="fa fa-user-o w3-margin-right"></i>
+      </Link>
 
-     <i class="fa fa-search w3-margin-right" ></i>
+
+      <i class="fa fa-user-o w3-margin-right"></i>
+
+      <i class="fa fa-search w3-margin-right" ></i>
       
       
-    </p>
+      </p>
   </header>
 
 
   <div class="w3-display-container w3-container">
-    <h2>Destaque </h2>
+  <h2>Destaque </h2>
     <img src={require("../assets/news.png")} className='img'/> 
     <div class="w3-display-topleft w3-text-white">
       <h1 class="w3-jumbo w3-hide-small" style={{'margin-top':"24px"}}>Nike Air Max 2090</h1>
@@ -158,26 +148,25 @@ useEffect(() => {
     </div>
   </div>
 
-
- 
-
   <div class="w3-container w3-xlarge" id="jeans">
-     <p class="w3-left"> Recentes </p>  
+     <p class="w3-left"> Ultimos Lançamentos </p>  
   </div>
 
-  
 
-
-  <div class="w3-row ">
+  <div class="w3-row w3-grayscale">
+   
   <>
             {products.map((product) => (
               <Product key={product._id} product={product}></Product>
             ))}
             </>
+   
 
   </div>
 
-  </div>
+</div>
+
+
 
 
     </div>
