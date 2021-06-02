@@ -241,8 +241,16 @@ export default function Produto(props) {
 
     function volta(){
         if(current === '1'){
-       
-         showSlides4() 
+          if(product.image !== 'Novo')
+          showSlides5() 
+          if(product.productImages1 !== 'Novo')
+            showSlides1() 
+          if(product.productImages2 !== 'Novo')
+            showSlides2() 
+          if(product.productImages3 !== 'Novo')
+            showSlides3() 
+          if(product.productImages4 !== 'Novo')
+            showSlides4() 
         }
         if(current === '2'){ 
              showSlides5() 
@@ -260,20 +268,42 @@ export default function Produto(props) {
 
     function passa(){
         if(current === '1'){
-       
-         showSlides1() 
+          if(product.productImages1 !== 'Novo'){
+          showSlides1();
+          }else{
+            showSlides5();
+          }
+          
+         
         }
         if(current === '2'){ 
-             showSlides2() 
-            }
+          if(product.productImages2 !== 'Novo')
+          showSlides2() 
+        }
         if(current === '3'){ 
-                showSlides3() 
+          if(product.productImages3 !== 'Novo'){
+            showSlides3();
+          }else{
+            showSlides5();
+          }
+           
+            
                }
         if(current === '4'){ 
-                showSlides4() 
+          if(product.productImages4 !== 'Novo'){
+          showSlides4();
+          }else{
+            showSlides5();
+          }
+          
+               
                }
         if(current === '5'){ 
-            showSlides5() 
+          if(product.productImages1 !== 'Novo'){
+            showSlides5();
+          }
+          
+            
                }
      }
 
@@ -297,13 +327,13 @@ export default function Produto(props) {
       </Link>
     </div>
     <div class="w3-col s3">
-      <a href="#plans" class="w3-button w3-block">Plans</a>
+      <a href="/" class="w3-button w3-block">Início</a>
     </div>
     <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block">About</a>
+      <a href="//search/category/" class="w3-button w3-block">Categorias</a>
     </div>
     <div class="w3-col s3">
-      <a href="#contact" class="w3-button w3-block">Contact</a>
+      <a href="/carrinho" class="w3-button w3-block">Carrinho</a>
     </div>
   </div>
 </div>
@@ -335,25 +365,25 @@ export default function Produto(props) {
   }
     
     <div class="w3-display-container mySlides" id='imagem2' hidden={true}>
-    <img src={require("../assets/tenis.png")} className='img'/>
+    <img src={product.productImages1} className='img'/>
       <div class="w3-display-toplefrtw3-container w3-padding-32">
         <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides3}>Imagem 2</span>
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem3' hidden={true}>
-    <img src={require("../assets/gazc.png")} className='img'/>
+    <img src={product.productImages2} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
         <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides4}>Imagem 3</span>
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem4' hidden={true}>
-    <img src={require("../assets/gazc.png")} className='img'/>
+    <img src={product.productImages3} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
         <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides5}>Imagem 4</span>
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem5' hidden={true}>
-    <img src={require("../assets/gazc.png")} className='img'/>
+    <img src={product.productImages4} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
         <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides1}>Imagem 5</span>
       </div>
@@ -393,7 +423,7 @@ export default function Produto(props) {
 
   <div class="w3-row w3-container">
     <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Nike Air Max 2090</span>
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">{product.name}</span>
     </div>
     <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
       <h3>Tamanho</h3>
