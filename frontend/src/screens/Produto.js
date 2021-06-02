@@ -330,7 +330,7 @@ export default function Produto(props) {
       <a href="/" class="w3-button w3-block">Início</a>
     </div>
     <div class="w3-col s3">
-      <a href="//search/category/" class="w3-button w3-block">Categorias</a>
+      <a href="/search/category/" class="w3-button w3-block">Buscar</a>
     </div>
     <div class="w3-col s3">
       <a href="/carrinho" class="w3-button w3-block">Carrinho</a>
