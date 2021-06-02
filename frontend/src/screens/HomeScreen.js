@@ -153,8 +153,8 @@ useEffect(() => {
         
    
  <p>
-  <i class="fa fa fa-whatsapp w3-hover-opacity w3-xlarge w3-margin-left"></i>
-        <i class="fa fa-instagram w3-hover-opacity w3-xlarge w3-margin-left"></i> 
+  <a href='https://api.whatsapp.com/send/?phone=5561993828838&text&app_absent=0' className='edit'> <i class="fa fa fa-whatsapp w3-hover-opacity w3-xlarge w3-margin-left"></i> </a>
+  <a href='https://www.instagram.com/gazzstore/' className='edit'>  <i class="fa fa-instagram w3-hover-opacity w3-xlarge w3-margin-left"></i>  </a>
         <i class="fa fa fa-envelope-o w3-hover-opacity w3-xlarge w3-margin-left"></i>
         <i class="fa fa fa-lock w3-hover-opacity w3-xlarge w3-margin-left"></i>
        
