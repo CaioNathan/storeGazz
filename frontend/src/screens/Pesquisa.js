@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { listProducts } from '../actions/productActions';
+import { listProductCategories, listProducts } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Product from '../components/Product';
@@ -43,7 +43,10 @@ const {
     categories,
   } = productCategoryList;
   useEffect(() => {
-    let mounted=true;
+    dispatch(listProductCategories());
+  }, [dispatch]);
+  useEffect(() => {
+
     
     dispatch(
       listProducts({

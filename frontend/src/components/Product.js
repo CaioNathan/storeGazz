@@ -17,7 +17,7 @@ export default function Product(props) {
       </Link>
           
           <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Ver Mais </button>
+           <Link to={`/produto/${product._id}`}> <button class="w3-button w3-black">Ver Mais </button> </Link>
           </div>
         </div>
       

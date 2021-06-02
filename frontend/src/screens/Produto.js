@@ -47,61 +47,215 @@ export default function Produto(props) {
 
 
     function showSlides1(){
-        document.getElementById("imagem1").hidden=true;  
-        document.getElementById("imagem2").hidden=false;  
+      if(product.image !== 'Novo'){
+        document.getElementById("imagem1").hidden=true; 
+      } 
+      if(product.productImages1 !== 'Novo'){
+        document.getElementById("imagem2").hidden=false; 
+      }
+      if(product.productImages2 !== 'Novo'){ 
         document.getElementById("imagem3").hidden=true; 
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("imagem4").hidden=true; 
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("imagem5").hidden=true; 
+      }
+
 
  
-     
-        
+      if(product.image  !== 'Novo'){
         document.getElementById("first").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages1 !== 'Novo'){
         document.getElementById("second").className='w3-tag demodots w3-border w3-transparent w3-white';
+      }
+      if(product.productImages2 !== 'Novo'){
         document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("quatro").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("cinco").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
 
         setCurrent('2')
-       
+      
     }
 
     function showSlides2(){
-        document.getElementById("imagem1").hidden=true;  
-        document.getElementById("imagem2").hidden=true;  
+      if(product.image !== 'Novo'){
+        document.getElementById("imagem1").hidden=true; 
+      } 
+      if(product.productImages1 !== 'Novo'){
+        document.getElementById("imagem2").hidden=true; 
+      }
+      if(product.productImages2 !== 'Novo'){ 
         document.getElementById("imagem3").hidden=false; 
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("imagem4").hidden=true; 
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("imagem5").hidden=true; 
+      }
 
-       
-        
-        
-        document.getElementById("second").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
-        document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-white';
+
+ 
+      if(product.image  !== 'Novo'){
         document.getElementById("first").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
-        
+      }
+      if(product.productImages1 !== 'Novo'){
+        document.getElementById("second").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages2 !== 'Novo'){
+        document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-white';
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("quatro").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("cinco").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+
         setCurrent('3')
-       
+      
     }
 
     function showSlides3(){
-        document.getElementById("imagem1").hidden=false;  
-        document.getElementById("imagem2").hidden=true;  
-        document.getElementById("imagem3").hidden=true;  
+      if(product.image !== 'Novo'){
+        document.getElementById("imagem1").hidden=true; 
+      } 
+      if(product.productImages1 !== 'Novo'){
+        document.getElementById("imagem2").hidden=true; 
+      }
+      if(product.productImages2 !== 'Novo'){ 
+        document.getElementById("imagem3").hidden=true; 
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("imagem4").hidden=false; 
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("imagem5").hidden=true; 
+      }
 
-        document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
-        document.getElementById("first").className='w3-tag demodots w3-border w3-transparent w3-white';
+
+ 
+      if(product.image  !== 'Novo'){
+        document.getElementById("first").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages1 !== 'Novo'){
         document.getElementById("second").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
-        setCurrent('1')
-       
+      }
+      if(product.productImages2 !== 'Novo'){
+        document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("quatro").className='w3-tag demodots w3-border w3-transparent w3-white';
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("cinco").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+
+        setCurrent('4')
      
     }
+
+    function showSlides4(){
+      if(product.image !== 'Novo'){
+        document.getElementById("imagem1").hidden=true; 
+      } 
+      if(product.productImages1 !== 'Novo'){
+        document.getElementById("imagem2").hidden=true; 
+      }
+      if(product.productImages2 !== 'Novo'){ 
+        document.getElementById("imagem3").hidden=true; 
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("imagem4").hidden=true; 
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("imagem5").hidden=false; 
+      }
+
+
+ 
+      if(product.image  !== 'Novo'){
+        document.getElementById("first").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages1 !== 'Novo'){
+        document.getElementById("second").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages2 !== 'Novo'){
+        document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages3 !== 'Novo'){
+        document.getElementById("quatro").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+      }
+      if(product.productImages4 !== 'Novo'){
+        document.getElementById("cinco").className='w3-tag demodots w3-border w3-transparent w3-white';
+      }
+
+        setCurrent('5')
+     
+  }
+  function showSlides5(){
+    if(product.image !== 'Novo'){
+      document.getElementById("imagem1").hidden=false; 
+    } 
+    if(product.productImages1 !== 'Novo'){
+      document.getElementById("imagem2").hidden=true; 
+    }
+    if(product.productImages2 !== 'Novo'){ 
+      document.getElementById("imagem3").hidden=true; 
+    }
+    if(product.productImages3 !== 'Novo'){
+      document.getElementById("imagem4").hidden=true; 
+    }
+    if(product.productImages4 !== 'Novo'){
+      document.getElementById("imagem5").hidden=true; 
+    }
+
+
+
+    if(product.image  !== 'Novo'){
+      document.getElementById("first").className='w3-tag demodots w3-border w3-transparent w3-white';
+    }
+    if(product.productImages1 !== 'Novo'){
+      document.getElementById("second").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+    }
+    if(product.productImages2 !== 'Novo'){
+      document.getElementById("tres").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+    }
+    if(product.productImages3 !== 'Novo'){
+      document.getElementById("quatro").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+    }
+    if(product.productImages4 !== 'Novo'){
+      document.getElementById("cinco").className='w3-tag demodots w3-border w3-transparent w3-hover-white';
+    }
+
+      setCurrent('1')
+  }
 
     function volta(){
         if(current === '1'){
        
-         showSlides2() 
+         showSlides4() 
         }
         if(current === '2'){ 
-             showSlides3() 
+             showSlides5() 
             }
         if(current === '3'){ 
                 showSlides1() 
                }
+        if(current === '4'){ 
+            showSlides2() 
+               }
+        if(current === '5'){ 
+            showSlides3() 
+               }       
      }
 
     function passa(){
@@ -114,6 +268,12 @@ export default function Produto(props) {
             }
         if(current === '3'){ 
                 showSlides3() 
+               }
+        if(current === '4'){ 
+                showSlides4() 
+               }
+        if(current === '5'){ 
+            showSlides5() 
                }
      }
 
@@ -165,22 +325,37 @@ export default function Produto(props) {
     
 
   <div class="w3-container" > 
+  { product.image !== 'Novo' &&
     <div class="w3-display-container mySlides" id='imagem1'hidden={false}>
-    <img src={require("../assets/news.png")} className='img'/>
+    <img src={product.image} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides2}>R$50.00</span>
+        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides2}>Imagem 1</span>
       </div>
     </div>
+  }
+    
     <div class="w3-display-container mySlides" id='imagem2' hidden={true}>
     <img src={require("../assets/tenis.png")} className='img'/>
       <div class="w3-display-toplefrtw3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides3}>R$80.00</span>
+        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides3}>Imagem 2</span>
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem3' hidden={true}>
     <img src={require("../assets/gazc.png")} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides1}>R$120.00</span>
+        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides4}>Imagem 3</span>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides" id='imagem4' hidden={true}>
+    <img src={require("../assets/gazc.png")} className='img'/>
+      <div class="w3-display-topleft w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides5}>Imagem 4</span>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides" id='imagem5' hidden={true}>
+    <img src={require("../assets/gazc.png")} className='img'/>
+      <div class="w3-display-topleft w3-container w3-padding-32">
+        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides1}>Imagem 5</span>
       </div>
     </div>
 
@@ -191,10 +366,22 @@ export default function Produto(props) {
       <div class="w3-left"  onClick={volta} id='volta' ><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
      
       <div class="w3-center">
-        <span class="w3-tag demodots w3-border w3-transparent w3-white" id='first'onClick={showSlides3} ></span>
+      { product.image !== 'Novo' &&
+        <span class="w3-tag demodots w3-border w3-transparent w3-white" id='first'onClick={showSlides5} ></span>
+      }
+       { product.productImages1 !== 'Novo' &&
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"id='second'onClick={showSlides1} ></span>
+      }
+      { product.productImages2 !== 'Novo' &&
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" id='tres' onClick={showSlides2} ></span>
-      </div>
+      }
+      { product.productImages3 !== 'Novo' &&
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" id='quatro' onClick={showSlides3} ></span>
+      }
+      { product.productImages4 !== 'Novo' &&
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" id='cinco' onClick={showSlides4} ></span>
+      }
+        </div>
     </div>
   </div>
 

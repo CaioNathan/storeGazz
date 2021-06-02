@@ -115,7 +115,7 @@ useEffect(() => {
               {userInfo.name} <i className="fa fa-user-o"> </i> {''} 
               </Link>
               
-                  <Link class="w3-bar-item w3-button w3-padding" to="/profile"> Conta </Link>
+                  
 
                         {userInfo && userInfo.isAdmin &&  (
                 <div className="dropdown">
@@ -220,7 +220,7 @@ useEffect(() => {
   </div>
 
 
-  <div class="w3-row w3-grayscale">
+  <div class="w3-row w3">
    
   <>
             {products.map((product) => (

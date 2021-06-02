@@ -14,6 +14,7 @@ import NovaSenha from './screens/NovaSenha';
 import Dash from './screens/Dash';
 import AdminRoute from './components/AdminRoute';
 import Pesquisa from './screens/Pesquisa';
+import EditarProduto from './screens/EditarProduto';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
          
           <Route path="/" component={HomeScreen} exact></Route>
           <Route path="/produto/:id" component={Produto} ></Route>
+          <Route path="/product/:id/editar" component={EditarProduto} ></Route>
           <Route path="/carrinho/:id?" component={Carrinho} ></Route>
           <Route path="/entrega" component={Entrega} ></Route>
           <Route path="/pagamento" component={Pagamento} ></Route>
@@ -58,6 +60,7 @@ function App() {
             component={Pesquisa}
             exact
           ></Route>
+          
           <AdminRoute
             path="/dash"
             component={Dash}

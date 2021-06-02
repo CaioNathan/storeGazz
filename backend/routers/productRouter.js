@@ -57,6 +57,19 @@ productRouter.get(
 );
 
 productRouter.get(
+  '/list',
+  expressAsyncHandler(async (req, res) => {
+    
+    const products = await Product.find({});
+
+      
+      
+  
+    res.send( products);
+  })
+);
+
+productRouter.get(
   '/news',
   expressAsyncHandler(async (req, res) => {
     
