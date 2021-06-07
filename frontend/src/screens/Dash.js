@@ -166,10 +166,12 @@ const createHandler = () => {
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" id="mySidebar" style={{"margin-top":"45px"}}><br/>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
+      <Link to='/'>
       <img  src={require("../assets/gazc.png")}  class="w3-circle w3-margin-right logoDash" />
+      </Link>
     </div>
     <div class="w3-col s8 w3-bar" style={{"background":"transparent"}}>
-      <span>Bem vindo, <strong> </strong></span><br/>
+      <span>Bem vindo <strong> </strong></span><br/>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -183,9 +185,9 @@ const createHandler = () => {
    
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"  title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar </a>
     <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-diamond fa-fw"></i>  Inicio </a>
-    <a href="#tabelaClientes"  class="w3-bar-item w3-button w3-padding "><i class="fa fa-cubes fa-fw"></i> Produtos </a>
-    <a href="#tabelaCasos"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-truck fa-fw"></i>  Pedidos </a>
-    <a href="#tabelaAgenda"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Clientes </a>
+    <a href="#tabelaProdutos"  class="w3-bar-item w3-button w3-padding "><i class="fa fa-cubes fa-fw"></i> Produtos </a>
+    <a href="#tabelaPedidos"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-truck fa-fw"></i>  Pedidos </a>
+    <a href="#tabelaClientes"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Clientes </a>
    
     
   </div>
@@ -260,7 +262,7 @@ const createHandler = () => {
   </div>
 
   {produtos !== '' && 
-  <div class="w3-panel" id='tabelaClientes'>
+  <div class="w3-panel" id='tabelaProdutos'>
   <div class="w3-row-padding">
 
             <h1> Produtos </h1>
@@ -332,7 +334,7 @@ const createHandler = () => {
   }
 
 {pedidos !== '' && 
-  <div class="w3-panel" id='tabelaClientes'>
+  <div class="w3-panel" id='tabelaPedidos'>
   <div class="w3-row-padding">
 
             <h1> Pedidos </h1>
@@ -350,7 +352,7 @@ const createHandler = () => {
             <thead>
                     <tr>
                         <th></th>
-                        <th>Produto</th>
+                        <th>Rastreio</th>
                         <th>Pagamento</th>
                         <th>Entrega</th>
                         <th>Cliente</th>
@@ -366,11 +368,12 @@ const createHandler = () => {
                     <td> {pedidos.orderItems[0].name}  </td>
                     <td>{pedidos.isPaid ? 'Pago' : 'Pendente'}</td>
                     <td>{pedidos.isDelivered ? 'Pago' : 'Pendente'}</td>
-                    <td> {pedidos.user.name}  </td>
+                    <td> {pedidos.user.email}  </td>
                     
                    
                    
                     <td>
+                    <Link to={`/pedido/${pedidos._id}`} className='edit'> <i class="fa fa-edit" aria-hidden="true" ></i> </Link>
                     <i class="fa fa-trash-o" aria-hidden="true" onClick={()=>deletePedidosHandler(pedidos._id)}></i>
                     </td>
                     
