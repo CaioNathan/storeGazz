@@ -185,9 +185,9 @@ const createHandler = () => {
    
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"  title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar </a>
     <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-diamond fa-fw"></i>  Inicio </a>
-    <a href="#tabelaProdutos"  class="w3-bar-item w3-button w3-padding "><i class="fa fa-cubes fa-fw"></i> Produtos </a>
-    <a href="#tabelaPedidos"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-truck fa-fw"></i>  Pedidos </a>
-    <a href="#tabelaClientes"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Clientes </a>
+    <a href="#tabelaClientes"  class="w3-bar-item w3-button w3-padding "><i class="fa fa-cubes fa-fw"></i> Produtos </a>
+    <a href="#tabelaCasos"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-truck fa-fw"></i>  Pedidos </a>
+    <a href="#tabelaAgenda"  class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Clientes </a>
    
     
   </div>
@@ -262,7 +262,7 @@ const createHandler = () => {
   </div>
 
   {produtos !== '' && 
-  <div class="w3-panel" id='tabelaProdutos'>
+  <div class="w3-panel" id='tabelaClientes'>
   <div class="w3-row-padding">
 
             <h1> Produtos </h1>
@@ -334,7 +334,7 @@ const createHandler = () => {
   }
 
 {pedidos !== '' && 
-  <div class="w3-panel" id='tabelaPedidos'>
+  <div class="w3-panel" id='tabelaClientes'>
   <div class="w3-row-padding">
 
             <h1> Pedidos </h1>
