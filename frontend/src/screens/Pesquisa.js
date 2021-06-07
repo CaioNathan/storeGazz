@@ -166,7 +166,7 @@ const {
 
       <input className='inputSearch'
       onChange={(e) => setPesquisa(e.target.value)}
-      ></input> <i className='fa fa-search' onClick={submitHandler}></i>
+      ></input> <i className='fa fa-search w3-xlarge' onClick={submitHandler}></i>
 
         <div style={{"margin-top":"65px"}}>
             {loadingCategories ? (

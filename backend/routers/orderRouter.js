@@ -21,7 +21,7 @@ orderRouter.get(
 
     const orders = await Order.find().populate(
       'user',
-      'name',
+      'email',
     );
     res.send(orders);
   })
