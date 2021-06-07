@@ -365,7 +365,7 @@ const createHandler = () => {
                  <>
                     <tr>
                     <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-                    <td> {pedidos.orderItems[0].name}  </td>
+                    <td> {pedidos.codRastreio}  </td>
                     <td>{pedidos.isPaid ? 'Pago' : 'Pendente'}</td>
                     <td>{pedidos.isDelivered ? 'Pago' : 'Pendente'}</td>
                     <td> {pedidos.user.email}  </td>
