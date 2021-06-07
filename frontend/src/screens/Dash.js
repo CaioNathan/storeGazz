@@ -166,12 +166,10 @@ const createHandler = () => {
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" id="mySidebar" style={{"margin-top":"45px"}}><br/>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
-      <Link to='/'>
       <img  src={require("../assets/gazc.png")}  class="w3-circle w3-margin-right logoDash" />
-      </Link>
     </div>
     <div class="w3-col s8 w3-bar" style={{"background":"transparent"}}>
-      <span>Bem vindo <strong> </strong></span><br/>
+      <span>Bem vindo, <strong> </strong></span><br/>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -352,7 +350,7 @@ const createHandler = () => {
             <thead>
                     <tr>
                         <th></th>
-                        <th>Rastreio</th>
+                        <th>Produto</th>
                         <th>Pagamento</th>
                         <th>Entrega</th>
                         <th>Cliente</th>
@@ -368,12 +366,11 @@ const createHandler = () => {
                     <td> {pedidos.orderItems[0].name}  </td>
                     <td>{pedidos.isPaid ? 'Pago' : 'Pendente'}</td>
                     <td>{pedidos.isDelivered ? 'Pago' : 'Pendente'}</td>
-                    <td> {pedidos.user.email}  </td>
+                    <td> {pedidos.user.name}  </td>
                     
                    
                    
                     <td>
-                    <Link to={`/pedido/${pedidos._id}`} className='edit'> <i class="fa fa-edit" aria-hidden="true" ></i> </Link>
                     <i class="fa fa-trash-o" aria-hidden="true" onClick={()=>deletePedidosHandler(pedidos._id)}></i>
                     </td>
                     
