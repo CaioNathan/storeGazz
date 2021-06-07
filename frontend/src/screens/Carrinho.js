@@ -38,7 +38,7 @@ export default function Carrinho(props) {
     
 
     <div class="w3-card ">
-    <div class="w3-container " >
+    <div class="w3-container" >
       <h4>Itens</h4>
     </div>
     {error && <MessageBox variant="danger">{error}</MessageBox>}
@@ -57,11 +57,38 @@ export default function Carrinho(props) {
           
       
           <span  style={{'margin-right':'10%'}} className='praPc'>  {item.name} </span>
-          
-          
-            <span  style={{'margin-right':'15%'}} className='praPc' >Quantidade </span>
 
-            <span  style={{'margin-right':'20%'}} className='praPc' >Tamanho</span>
+         <span  style={{'margin-right':'15%'}} className='praPc'> Quantidade <select
+                      value={item.qty}
+                      onChange={(e) =>
+                        dispatch(
+                          addToCart(item.product, Number(e.target.value))
+                        )
+                      }
+                    >
+                      {[...Array(item.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </select>
+                    </span>
+          
+          
+          
+              
+             
+             
+
+            <span  style={{'margin-right':'20%'}} className='praPc' >Tamanho 
+            <select>
+                 <option> P </option> 
+                 <option> M </option>     
+                 <option> G </option>         
+                      
+            </select>
+
+            </span>
 
             <span  style={{'margin-right':'10%'}} className='praPc' >R${item.price},00   </span>
 
@@ -73,12 +100,40 @@ export default function Carrinho(props) {
             <span  style={{'margin-right':'10%'}}  >{item.name} </span>
             </div>
 
-            <div>
-            <span  style={{'margin-right':'10%'}}  >Quantidade</span>
-            </div>
+            <span  style={{'margin-right':'10%'}} > Quantidade <select
+                      value={item.qty}
+                      onChange={(e) =>
+                        dispatch(
+                          addToCart(item.product, Number(e.target.value))
+                        )
+                      }
+                    >
+                      {[...Array(item.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </select>
+                    </span>
 
             <div>
-            <span  style={{'margin-right':'10%'}}  >Tamanho</span>
+            <span  style={{'margin-right':'10%'}} >Tamanho 
+            <select
+                      value={item.qty}
+                      onChange={(e) =>
+                        dispatch(
+                          addToCart(item.product, Number(e.target.value))
+                        )
+                      }
+                    >
+                      {[...Array(item.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </select>
+            
+            </span>
             </div>
 
             <div>
@@ -95,7 +150,7 @@ export default function Carrinho(props) {
 
 
                 <li class="w3-padding-16">
-                  <span> Subtoal</span>  
+                  <span> Subtotal</span>  
                   <span className='w3-right'>  ({cartItems.reduce((a, c) => a + c.qty, 0)} itens) : R$
                 {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}</span>
                 </li>

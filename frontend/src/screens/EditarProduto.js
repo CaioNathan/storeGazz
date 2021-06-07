@@ -203,50 +203,58 @@ export default function EditarProduto(props) {
 
   return (
     <div>
-      <form className="form" onSubmit={submitHandler}>
+      <div>
+
+<div class="w3-container"  >
+    <h1 class="w3-center w3-text">
+    Editar Produto {name}
+    </h1>
+
+     
+    <hr  class="w3-round"/>
+   
+    <form onSubmit={submitHandler} >
+    {loading && <LoadingBox></LoadingBox>}
+    {error && <MessageBox variant="danger">{error}</MessageBox>}
+      
+      <div class="w3-section">
+        <label>Nome</label>
+        <input
+         class="w3-input w3-border"
+         id="name"
+         type="text"
+         placeholder="Nome"
+         value={name}
+         onChange={(e) => setName(e.target.value)}
+         
+          ></input>
+      </div>
+      <div class="w3-section">
+        <label>Preço</label>
+        <input
+         class="w3-input w3-border"
+         id="price"
+         type="text"
+         placeholder="Preço"
+         value={price}
+         onChange={(e) => setPrice(e.target.value)}
+        
+          ></input>
+      </div>
+      <div class="w3-section">
+        <label>Imagem Principal </label>
         <div>
-          <h1>Editar Produto {productId}</h1>
-        </div>
-        {loadingUpdate && <LoadingBox></LoadingBox>}
-        {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
-        {loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <>
-            <div>
-              <label htmlFor="name">Nome</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Nome"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="price">Preço</label>
-              <input
-                id="price"
-                type="text"
-                placeholder="Preço"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="image">Imagem</label>
-              <input
-                id="image"
+        <input
+         class="w3-input w3-border"
+         id="image"
                 type="text"
                 placeholder="Imagem"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="imageFile">Imagem Principal</label>
+        
+          ></input>
+
+       
               <input
                 multiple
                 type="file"
@@ -258,63 +266,88 @@ export default function EditarProduto(props) {
               {errorUpload && (
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
-            </div>
-            <div>
-              <label htmlFor="category">Categoria</label>
-              <input
-                id="category"
+
+        </div>
+
+        <div class="w3-section">
+        <label>Categoria</label>
+        <input
+         class="w3-input w3-border"
+         id="category"
                 type="text"
                 placeholder="Categoria"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="brand">Marca</label>
-              <input
-                id="brand"
+         
+          ></input>
+      </div>
+
+      <div class="w3-section">
+        <label>Marca</label>
+        <input
+         class="w3-input w3-border"
+         id="brand"
                 type="text"
                 placeholder="Marca"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="countInStock">Qtd Estoque</label>
-              <input
-                id="countInStock"
+         
+          ></input>
+      </div>
+
+      <div class="w3-section">
+        <label>Quantidade</label>
+        <input
+         class="w3-input w3-border"
+         id="countInStock"
                 type="text"
                 placeholder="Qtd Estoque"
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="description">Descrição</label>
-              <textarea
-                id="description"
-                rows="3"
+         
+          ></input>
+      </div>
+
+      <div class="w3-section">
+        <label>Tamanho</label>
+        <input
+         class="w3-input w3-border"
+         id="tamanho"
+                type="text"
+                placeholder="Tamanho"
+               
+         
+          ></input>
+      </div>
+
+      
+      <div class="w3-section">
+        <label>Descrição</label>
+        <input
+         class="w3-input w3-border"
+         id="description"
                 type="text"
                 placeholder="Descrição"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-              ></textarea>
-            </div>
+         
+          ></input>
+      </div>
 
-
-            <div> Imagens do Produto
-
-            <div>
-            
-              <input
-                id="image"
+      <div class="w3-section">
+        <label>Imagem 2 </label>
+        <div>
+        <input
+         class="w3-input w3-border"
+         id="image"
                 type="text"
                 placeholder="Imagem"
                 value={productImages1}
                 onChange={(e) => setProductImages1(e.target.value)}
-              ></input>
-            
-              
+        
+          ></input>
+
+       
               <input
                 multiple
                 type="file"
@@ -327,15 +360,23 @@ export default function EditarProduto(props) {
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
 
-               <input
-                id="image"
+        </div>
+        </div>
+
+        <div class="w3-section">
+        <label>Imagem 3 </label>
+        <div>
+        <input
+         class="w3-input w3-border"
+         id="image"
                 type="text"
                 placeholder="Imagem"
                 value={productImages2}
                 onChange={(e) => setProductImages2(e.target.value)}
-              ></input>
-            
-              
+        
+          ></input>
+
+       
               <input
                 multiple
                 type="file"
@@ -348,15 +389,23 @@ export default function EditarProduto(props) {
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
 
-               <input
-                id="image"
+        </div>
+        </div>
+
+        <div class="w3-section">
+        <label>Imagem 4 </label>
+        <div>
+        <input
+         class="w3-input w3-border"
+         id="image"
                 type="text"
                 placeholder="Imagem"
                 value={productImages3}
                 onChange={(e) => setProductImages3(e.target.value)}
-              ></input>
-            
-              
+        
+          ></input>
+
+       
               <input
                 multiple
                 type="file"
@@ -369,15 +418,23 @@ export default function EditarProduto(props) {
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
 
-               <input
-                id="image"
+        </div>
+        </div>
+
+        <div class="w3-section">
+        <label>Imagem 5 </label>
+        <div>
+        <input
+         class="w3-input w3-border"
+         id="image"
                 type="text"
                 placeholder="Imagem"
                 value={productImages4}
                 onChange={(e) => setProductImages4(e.target.value)}
-              ></input>
-            
-              
+        
+          ></input>
+
+       
               <input
                 multiple
                 type="file"
@@ -390,15 +447,23 @@ export default function EditarProduto(props) {
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
 
-               <input
-                id="image"
+        </div>
+        </div>
+
+        <div class="w3-section">
+        <label>Imagem 6 </label>
+        <div>
+        <input
+         class="w3-input w3-border"
+         id="image"
                 type="text"
                 placeholder="Imagem"
                 value={productImages5}
                 onChange={(e) => setProductImages5(e.target.value)}
-              ></input>
-            
-              
+        
+          ></input>
+
+       
               <input
                 multiple
                 type="file"
@@ -410,18 +475,23 @@ export default function EditarProduto(props) {
               {errorUpload && (
                 <MessageBox variant="danger">{errorUpload}</MessageBox>
               )}
-            </div>
 
-            </div>
-            <div>
-              <label></label>
-              <button className="primary" type="submit">
-                Editar
-              </button>
-            </div>
-          </>
-        )}
-      </form>
-    </div>
+        </div>
+        </div>
+      
+      
+       
+      </div>
+      <h3 className='w3-center'> 
+            
+             <button class="w3-button w3-green" type='submit'>   Editar </button>
+             
+             </h3>
+
+    </form>  
+  </div>
+  </div>
+  </div>
+
   );
 }

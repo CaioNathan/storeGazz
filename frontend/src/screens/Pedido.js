@@ -10,14 +10,17 @@ import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
 } from '../constants/orderConstants';
+import axios from 'axios'
 
 
 
 
 export default function Pedido(props) {
 
+  const token = localStorage.getItem('token');
   const orderId = props.match.params.id;
   const [sdkReady, setSdkReady] = useState(false);
+  const [rastreio,setRastreio] = useState('');
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
   const userSignin = useSelector((state) => state.userSignin);
@@ -74,6 +77,27 @@ export default function Pedido(props) {
   const deliverHandler = () => {
     dispatch(deliverOrder(order._id));
   };
+
+
+  async function addRastreio() {
+    
+        try{
+          const data ={
+            codRastreio:rastreio
+          };
+            await axios.put(`/api/orders/${order._id}/rastreio`,data,{
+                headers:{
+                    Authorization:`Bearer ${token}`,
+                }
+            })
+            window.location.reload();
+        
+
+        } catch(err) {
+            alert(err);
+        }
+    
+ }
   
  return loading ? (
             <LoadingBox></LoadingBox>
@@ -105,8 +129,16 @@ export default function Pedido(props) {
                     Entregue realizada em {order.deliveredAt}
                   </MessageBox>
                 ) : (
-                  <MessageBox variant="danger">Pendente</MessageBox>
+                  <MessageBox variant="danger"> Pendente </MessageBox>
                 )}
+
+                {order.codRastreio && (
+                  <>
+                  Codigo de Rastreio: {order.codRastreio}
+                  </>
+                )
+
+                }
             </div>
 
             <div class="w3-container">
@@ -233,6 +265,25 @@ export default function Pedido(props) {
               <p><b>Entrega</b> R${order.taxPrice.toFixed(2)}</p>
               <p><b>Total</b>R${order.totalPrice.toFixed(2)}</p>
 
+              <p>
+              { userInfo.isAdmin && order.isPaid && !order.codRastreio &&(
+                <>
+                <div>
+                <label>Rastreio</label>
+                <input
+                value={rastreio}
+                onChange={(e) => setRastreio(e.target.value)}></input>
+                <button onClick={(e) => addRastreio()}>Add</button>
+                
+                </div>
+               
+                
+                </>
+
+              )
+              }
+              </p>
+
               {!order.isPaid  && order.paymentMethod ==='Transferência/Pix' && (
               
                   <p><b> Dados da Conta para fazer a Transferência:</b></p>
@@ -307,6 +358,10 @@ export default function Pedido(props) {
                   </button>
                
               )}
+
+              
+
+              
                     
                 
             </div>

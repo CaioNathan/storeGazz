@@ -25,7 +25,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
   margin-left:250px
 }
 
-
+.inputSearch{
+  margin-top: 20px;
+}
 
 .img {
   width:100%;
@@ -121,6 +123,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {
 
 
 @media (max-width: 1000px) {
+
+  .inputSearch{
+    margin-top: 70px;
+  }
   
   .w3-bar{
     height: 80px;

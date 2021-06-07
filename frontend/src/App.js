@@ -15,6 +15,8 @@ import Dash from './screens/Dash';
 import AdminRoute from './components/AdminRoute';
 import Pesquisa from './screens/Pesquisa';
 import EditarProduto from './screens/EditarProduto';
+import PedidosList from './screens/Pedidos';
+import ProfileScreen from './screens/Profile';
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
           <Route path="/register" component={Register} ></Route>
           <Route path="/recuperar" component={Recuperar} ></Route>
           <Route path="/novasenha" component={NovaSenha} ></Route>
+          <Route path="/pedidoslist" component={PedidosList} ></Route>
+          <Route path="/profile" component={ProfileScreen} ></Route>
           <Route
             path="/search/name/:name?"
             component={Pesquisa}

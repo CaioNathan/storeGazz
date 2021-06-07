@@ -166,7 +166,22 @@ orderRouter.put(
     }
   })
 );
-
+orderRouter.put(
+  '/:id/rastreio',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params.id);
+    if (order) {
+      order.codRastreio = req.body.codRastreio;
+      
+      const updatedOrder = await order.save();
+      res.send({ message: 'Codigo de Rastreio adicionado', order: updatedOrder });
+    } else {
+      res.status(404).send({ message: 'Order Not Found' });
+    }
+  })
+);
 
 
 

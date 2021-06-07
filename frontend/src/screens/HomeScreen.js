@@ -111,7 +111,7 @@ useEffect(() => {
           userInfo ? (
             <div className="dropdown">
 
-            <Link to='#' class="w3-bar-item w3-button w3-padding"> 
+            <Link to='/profile' class="w3-bar-item w3-button w3-padding"> 
               {userInfo.name} <i className="fa fa-user-o"> </i> {''} 
               </Link>
               
@@ -132,7 +132,7 @@ useEffect(() => {
               )}
 
                
-                  <Link class="w3-bar-item w3-button w3-padding" to="/orderhistory"> Meus pedidos </Link>
+                  <Link class="w3-bar-item w3-button w3-padding" to="/pedidoslist"> Meus pedidos </Link>
                 
 
               
@@ -187,8 +187,9 @@ useEffect(() => {
   <p class="w3-right header">
     
      
-
-      <input className='search'hidden='true'></input><i class="fa fa-search w3-margin-right" ></i>
+      <Link to='/search/name'>
+      <i class="fa fa-search w3-margin-right" ></i>
+      </Link>
 
       <Link to='/carrinho'>
       <i class="fa fa-shopping-cart w3-margin-right"> {cartItems.length > 0 && (
@@ -196,8 +197,9 @@ useEffect(() => {
               )} </i>
       </Link>
 
-
+      <Link to='/profile'>
       <i class="fa fa-user-o w3-margin-right"></i>
+      </Link>
       
       
       </p>

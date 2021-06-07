@@ -11,7 +11,12 @@ import Product from '../components/Product';
 export default function HomeScreen(props) {
 
   const [display,setDisplay]= useState('none');
- 
+
+  const [pesquisa, setPesquisa] = useState('');
+  const submitHandler = (e) => {
+    e.preventDefault();
+    props.history.push(`/search/name/${pesquisa}`);
+  };
 
 function w3_open() {
   setDisplay('block')
@@ -158,6 +163,10 @@ const {
         ) : (
           <div>{products.length} Resultados</div>
         )}
+
+      <input className='inputSearch'
+      onChange={(e) => setPesquisa(e.target.value)}
+      ></input> <i className='fa fa-search' onClick={submitHandler}></i>
 
         <div style={{"margin-top":"65px"}}>
             {loadingCategories ? (

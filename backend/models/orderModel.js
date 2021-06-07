@@ -39,6 +39,7 @@ const orderSchema = new mongoose.Schema(
     seller: { type: mongoose.Schema.Types.ObjectID, ref: 'User' },
     isPaid: { type: Boolean, default: false },
     paidAt: { type: Date },
+    codRastreio:{type:String},
     isDelivered: { type: Boolean, default: false },
     deliveredAt: { type: Date },
   },
