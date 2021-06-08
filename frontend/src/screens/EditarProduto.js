@@ -20,6 +20,13 @@ export default function EditarProduto(props) {
   const [productImages3,setProductImages3] = useState('');
   const [productImages4,setProductImages4] = useState('');
   const [productImages5,setProductImages5] = useState('');
+  const [tamanho,setTamanho] = useState('');
+  const [p,setP] = useState('');
+  const [m,setM] = useState('');
+  const [g,setG] = useState('');
+  const [num38,setNum38] = useState('');
+  const [num39,setNum39] = useState('');
+  const [num40,setNum40] = useState('');
   
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -53,6 +60,13 @@ export default function EditarProduto(props) {
       setProductImages3(product.productImages3) 
       setProductImages4(product.productImages4) 
       setProductImages5(product.productImages5) 
+      setTamanho(product.tamanho)
+      setP(product.tamanhosDisponiveis[0].p)
+      setM(product.tamanhosDisponiveis[0].m)
+      setG(product.tamanhosDisponiveis[0].g)
+      setNum38(product.tamanhosDisponiveis[0].num38)
+      setNum39(product.tamanhosDisponiveis[0].num39)
+      setNum40(product.tamanhosDisponiveis[0].num40)
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
   const submitHandler = (e) => {
@@ -66,6 +80,7 @@ export default function EditarProduto(props) {
         image,
         category,
         brand,
+        tamanho,
         countInStock,
         description,
         productImages1, 
@@ -73,6 +88,7 @@ export default function EditarProduto(props) {
         productImages3, 
         productImages4, 
         productImages5, 
+        tamanhosDisponiveis:{p:p,m:m,g:g,num38:num38,num39:num39,num40:num40 }, 
       })
     );
   };
@@ -309,15 +325,38 @@ export default function EditarProduto(props) {
       </div>
 
       <div class="w3-section">
-        <label>Tamanho</label>
-        <input
-         class="w3-input w3-border"
-         id="tamanho"
-                type="text"
-                placeholder="Tamanho"
-               
-         
-          ></input>
+        <label>Tamanho</label><br/>
+        <div style={{'display':'flex'}}>
+            <div style={{'margin-right':'20px '}}>
+            
+            <input type="checkbox" id="p" type="checkbox"
+                checked={p}
+                onChange={(e) => setP(e.target.checked)}/>
+                <label for="p"> P </label><br/>
+            
+            <input type="checkbox" id="m" type="checkbox"  
+                checked={m}
+                onChange={(e) => setM(e.target.checked)}/>
+            <label for="m"> M </label><br/>
+            <input type="checkbox" id="g"  checked={g}
+                onChange={(e) => setG(e.target.checked)}/>
+            <label for="g"> G </label><br/>
+            </div>
+
+            <div>
+            <input type="checkbox" id="38"  checked={num38}
+                onChange={(e) => setNum38(e.target.checked)}/>
+            <label for="38"> 38 </label><br/>
+           
+            <input type="checkbox" id="39"  checked={num39}
+                onChange={(e) => setNum39(e.target.checked)}/>
+            <label for="39"> 39 </label><br/>
+
+            <input type="checkbox" id="40"  checked={num40}
+                onChange={(e) => setNum40(e.target.checked)}/>
+            <label for="40"> 40 </label><br/>
+            </div>
+        </div>
       </div>
 
       

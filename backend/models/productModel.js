@@ -26,6 +26,17 @@ const productSchema = new mongoose.Schema(
     productImages3: { type: String, required: true },
     productImages4: { type: String, required: true },
     productImages5: { type: String, required: true },
+    tamanhosDisponiveis:[
+      {
+      p:{ type: Boolean},
+      m:{ type: Boolean},
+      g:{ type: Boolean},
+      num38:{ type: Boolean},
+      num39:{ type: Boolean},
+      num40:{ type: Boolean},
+      }
+    ],
+    tamanho:{ type: String},
   },
   {
     timestamps: true,

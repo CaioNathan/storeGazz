@@ -82,9 +82,27 @@ export default function Carrinho(props) {
 
             <span  style={{'margin-right':'20%'}} className='praPc' >Tamanho 
             <select>
-                 <option> P </option> 
-                 <option> M </option>     
-                 <option> G </option>         
+
+                      {item.tamanhosDisponiveis[0].p &&
+                        <option> P </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].m &&
+                        <option> M </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].g &&
+                        <option> G </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num38 &&
+                        <option> 38 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num39 &&
+                        <option> 39 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num40 &&
+                        <option> 40 </option> 
+                      }
+                 
+                     
                       
             </select>
 
@@ -118,20 +136,30 @@ export default function Carrinho(props) {
 
             <div>
             <span  style={{'margin-right':'10%'}} >Tamanho 
-            <select
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </select>
+            <select>
+
+              {item.tamanhosDisponiveis[0].p &&
+                <option> P </option> 
+              }
+              {item.tamanhosDisponiveis[0].m &&
+                <option> M </option> 
+              }
+              {item.tamanhosDisponiveis[0].g &&
+                <option> G </option> 
+              }
+              {item.tamanhosDisponiveis[0].num38 &&
+                <option> 38 </option> 
+              }
+              {item.tamanhosDisponiveis[0].num39 &&
+                <option> 39 </option> 
+              }
+              {item.tamanhosDisponiveis[0].num40 &&
+                <option> 40 </option> 
+              }
+
+
+
+              </select>
             
             </span>
             </div>

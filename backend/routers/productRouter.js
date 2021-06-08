@@ -138,7 +138,17 @@ productRouter.post(
       brand: 'Marca',
       countInStock: 0,
       rating: 0,
+      tamanho:'P',
       numReviews: 0,
+      tamanhosDisponiveis:[{
+        p:false,
+        m:false,
+        g:false,
+        num38:false,
+        num39:false,
+        num40:false,
+      }],
+
       description: 'Descrição',
     });
     const createdProduct = await product.save();
@@ -161,6 +171,8 @@ productRouter.put(
       product.productImages3 = req.body.productImages3;
       product.productImages4 = req.body.productImages4;
       product.productImages5 = req.body.productImages5;
+      product.tamanho= req.body.tamanho;
+      product.tamanhosDisponiveis= req.body.tamanhosDisponiveis;
       
       product.category = req.body.category;
       product.brand = req.body.brand;
