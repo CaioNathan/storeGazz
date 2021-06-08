@@ -432,7 +432,7 @@ export default function Produto(props) {
 
     <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
       <h3>Condição</h3>
-      <p>Novo sem caixa 4.5/5</p>
+      <p>{product.condicao}</p>
     </div>
 
     <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">

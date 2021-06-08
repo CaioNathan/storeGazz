@@ -26,6 +26,7 @@ const productSchema = new mongoose.Schema(
     productImages3: { type: String, required: true },
     productImages4: { type: String, required: true },
     productImages5: { type: String, required: true },
+    condicao:{type: String},
     tamanhosDisponiveis:[
       {
       p:{ type: Boolean},

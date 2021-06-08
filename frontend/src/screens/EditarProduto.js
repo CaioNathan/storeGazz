@@ -14,6 +14,7 @@ export default function EditarProduto(props) {
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
   const [brand, setBrand] = useState('');
+  const [condicao, setCondicao] = useState('');
   const [description, setDescription] = useState('');
   const [productImages1,setProductImages1] = useState('');
   const [productImages2,setProductImages2] = useState('');
@@ -61,6 +62,7 @@ export default function EditarProduto(props) {
       setProductImages4(product.productImages4) 
       setProductImages5(product.productImages5) 
       setTamanho(product.tamanho)
+      setCondicao(product.condicao)
       setP(product.tamanhosDisponiveis[0].p)
       setM(product.tamanhosDisponiveis[0].m)
       setG(product.tamanhosDisponiveis[0].g)
@@ -88,6 +90,7 @@ export default function EditarProduto(props) {
         productImages3, 
         productImages4, 
         productImages5, 
+        condicao,
         tamanhosDisponiveis:{p:p,m:m,g:g,num38:num38,num39:num39,num40:num40 }, 
       })
     );
@@ -369,6 +372,19 @@ export default function EditarProduto(props) {
                 placeholder="Descrição"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+         
+          ></input>
+      </div>
+
+      <div class="w3-section">
+        <label>Condição</label>
+        <input
+         class="w3-input w3-border"
+         id="condicao"
+                type="text"
+                placeholder="Condição"
+                value={condicao}
+                onChange={(e) => setCondicao(e.target.value)}
          
           ></input>
       </div>

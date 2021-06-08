@@ -149,7 +149,7 @@ export default function Finalizar(props) {
     
       <span   style={{'margin-left':'50px'}} className='praPc' > Qtd - {item.qty}  </span>
 
-      <span   style={{'margin-left':'50px'}} className='praPc' >Tamanho</span>
+      <span   style={{'margin-left':'50px'}} className='praPc' >Tamanho </span>
 
       <span   className='w3-right' > {item.qty}x R${item.price} = R${item.qty * item.price}   </span>
 
@@ -165,7 +165,7 @@ export default function Finalizar(props) {
       </div>
 
       <div>
-      <span  style={{'margin-right':'10%'}}  >Tamanho</span>
+      <span  style={{'margin-right':'10%'}}  >Tamanho </span>
       </div>
 
       

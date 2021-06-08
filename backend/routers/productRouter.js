@@ -140,6 +140,7 @@ productRouter.post(
       rating: 0,
       tamanho:'P',
       numReviews: 0,
+      condicao:'Condicao',
       tamanhosDisponiveis:[{
         p:false,
         m:false,
@@ -173,6 +174,7 @@ productRouter.put(
       product.productImages5 = req.body.productImages5;
       product.tamanho= req.body.tamanho;
       product.tamanhosDisponiveis= req.body.tamanhosDisponiveis;
+      product.condicao=req.body.condicao;
       
       product.category = req.body.category;
       product.brand = req.body.brand;
