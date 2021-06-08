@@ -426,8 +426,32 @@ export default function Produto(props) {
       <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">{product.name}</span>
     </div>
     <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
-      <h3>Tamanho</h3>
-      <p>41</p>
+      <h3>Tamanhos</h3>
+      <p> 
+        {product.tamanhosDisponiveis[0].p &&
+        <b>P </b>
+        }
+         {product.tamanhosDisponiveis[0].m &&
+        <b>M </b>
+        }
+         {product.tamanhosDisponiveis[0].g &&
+         <b>G </b>
+        }
+
+        {product.tamanhosDisponiveis[0].num38 &&
+        <b>38 </b>
+        }
+         {product.tamanhosDisponiveis[0].num39 &&
+        <b>39 </b>
+        }
+         {product.tamanhosDisponiveis[0].num40 &&
+         <b>40 </b>
+        }
+        
+        
+        
+        
+     </p>
     </div>
 
     <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
