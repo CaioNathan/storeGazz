@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://gazzStore:12345@cluster0.2j0bz.mongodb.net/gazzStore?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/gazzStore', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

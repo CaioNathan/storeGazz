@@ -110,7 +110,9 @@ export default function Pedido(props) {
 
 
         <header > 
-          <h1><b>Pedido</b></h1>
+          <h1> 
+          <Link to='/' style={{'text-decoration':"none"}}> <img src={require("../assets/gazc.png")} className='logo' />  </Link>
+            <b>Pedido</b></h1>
           
         </header>
 
@@ -262,7 +264,13 @@ export default function Pedido(props) {
             <div class="w3-container w3-white">
               <h4><b>Pedido</b></h4>
               <p><b>Itens</b> R${order.itemsPrice.toFixed(2)}</p>
-              <p><b>Entrega</b> R${order.taxPrice.toFixed(2)}</p>
+              { order.shippingAddress.country !== 'DF' ?
+                 <p><b>Entrega</b> R${order.taxPrice.toFixed(2)}</p>
+                 :
+                 <p><b>Entrega</b>: Grátis</p>
+
+              }
+             
               <p><b>Total</b>R${order.totalPrice.toFixed(2)}</p>
 
               <p>
@@ -365,9 +373,13 @@ export default function Pedido(props) {
                     
                 
             </div>
-            
+           
           
           </div>
+
+          <Link to='/'>
+          <button class="w3-button w3-margin-left">  Voltar para o Inicio </button>
+          </Link>
           
           </div>
 

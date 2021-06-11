@@ -25,7 +25,9 @@ export default function Pagamento(props) {
        <CheckoutSteps step1 step2 step3></CheckoutSteps>
 
 <div class="w3-container" id="contact" >
-    <h1 class="w3-center w3-text-blue"><b>Pagamento</b></h1>
+<h1 class='w3-center'> 
+          <Link to='/' style={{'text-decoration':"none"}}> <img src={require("../assets/gazc.png")} className='logo' />  </Link>
+            <b>Pagamento</b></h1>
     <hr  class="w3-round"/>
    
     <form onSubmit={submitHandler}>

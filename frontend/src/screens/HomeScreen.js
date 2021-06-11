@@ -197,9 +197,16 @@ useEffect(() => {
               )} </i>
       </Link>
 
+     { userInfo ?
       <Link to='/profile'>
       <i class="fa fa-user-o w3-margin-right"></i>
       </Link>
+      :
+      <Link to='/login'>
+      <i class="fa fa-user-o w3-margin-right"></i>
+      </Link>
+     }
+      
       
       
       </p>

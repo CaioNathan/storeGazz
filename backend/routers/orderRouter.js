@@ -8,6 +8,7 @@ import {
   mailgun,
   OrderEmailTemplate,
   payOrderEmailTemplate,
+  rastreioOrderTemplate,
 } from '../utils.js';
 import sgMail from "@sendgrid/mail"
 
@@ -171,11 +172,30 @@ orderRouter.put(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findById(req.params.id).populate(
+      'user',
+      'email name');
     if (order) {
       order.codRastreio = req.body.codRastreio;
       
       const updatedOrder = await order.save();
+      
+      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+ 
+        const msg = {
+          from: 'nathansallenave@gmail.com',
+          to: updatedOrder.user.email,
+          subject: `Gazz - Rastreio do Pedido`,
+          html: rastreioOrderTemplate(updatedOrder),
+        }
+     
+        try {
+            const result = await sgMail.send(msg);
+            console.log('Email sent', result);
+        }
+        catch (error) {
+            console.error(error)
+        }
       res.send({ message: 'Codigo de Rastreio adicionado', order: updatedOrder });
     } else {
       res.status(404).send({ message: 'Order Not Found' });

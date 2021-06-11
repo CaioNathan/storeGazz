@@ -76,7 +76,9 @@ export default function Finalizar(props) {
 
 
 <header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>Finalizar Pedido</b></h1>
+<h1 class='w3-center'> 
+          <Link to='/' style={{'text-decoration':"none"}}> <img src={require("../assets/gazc.png")} className='logo' />  </Link>
+            <b>Finalizar Pedido</b></h1>
   
 </header>
 
@@ -202,25 +204,60 @@ export default function Finalizar(props) {
     <div class="w3-container w3-white">
       <h4><b>Pedido</b></h4>
       <p><b>Itens</b> R${cart.itemsPrice.toFixed(2)}</p>
-      <p><b>Calcular Entrega</b></p>
-                 <input 
-                    type="text"
-                    id="cep"
-                    placeholder="CEP"
-                    value={cep}
-                    onChange={(e) => setCep(e.target.value)}></input>
-                    <button
-                    onClick={()=>calcularFrete(cep)}
-                    ><i class="fa fa-truck" aria-hidden="true"></i></button>
+      {cart.shippingAddress.country !== 'DF' &&
 
+        <>
+        
+         <p><b>Calcular Entrega</b></p>
+         <input 
+            type="text"
+            id="cep"
+            placeholder="CEP"
+            value={cep}
+            onChange={(e) => setCep(e.target.value)}></input>
+            <button
+            onClick={()=>calcularFrete(cep)}
+            ><i class="fa fa-truck" aria-hidden="true"></i></button>
+          </>
+          
+      }
+
+      {cart.shippingAddress.country === 'DF' &&
+
+      <>
+
+      <p><b>Calcular Entrega</b></p>
+      <input 
+          type="text"
+          id="cep"
+          placeholder="CEP"
+          value={cep}
+          onChange={(e) => setCep(e.target.value)}></input>
+          <button
+          onClick={()=>setCfrete(true)}
+          ><i class="fa fa-truck" aria-hidden="true"></i></button>
+        </>
+        
+      }
+
+     
+     {cart.shippingAddress.country !== 'DF'  &&
       <p><b>Entrega</b> R${cart.taxPrice.toFixed(2)}</p>
+    }
+
+    {cart.shippingAddress.country === 'DF'  && cfrete &&
+      <p><b>Entrega</b>:  Grátis para DF </p>
+    }
+      
 
       <p><b>Total</b> R${cart.totalPrice.toFixed(2)}</p>
       <button class="w3-button w3-green w3-right"  onClick={placeOrderHandler}>  Finalizar </button>   
     </div>
     
   </div>
-  
+  <Link to='/'>
+          <button class="w3-button w3-margin-left">  Voltar para o Inicio </button>
+          </Link>
   </div>
 
 

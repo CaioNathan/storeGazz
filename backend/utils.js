@@ -58,13 +58,13 @@ export const payOrderEmailTemplate = (order) => {
   <p>Seu pacote está sendo preparado para envio. </p>
   <p> Após o processamento do pacote em até 48 horas úteis você receberá um e-mail com o código de rastreio de seu pedido. </p>
   </p>
-  <h2>[Order ${order._id}] </h2>
+  <h2>[Pedido ${order._id}] </h2>
   <table>
   <thead>
   <tr>
-  <td><strong>Produto</strong></td>
-  <td><strong>Quantidade</strong></td>
-  <td><strong align="right">Preço</strong></td>
+  <td><strong>Produto      </strong></td>
+  <td><strong>    Quantidade</strong></td>
+  <td><strong align="right">   Preço</strong></td>
   </thead>
   <tbody>
   ${order.orderItems
@@ -72,8 +72,8 @@ export const payOrderEmailTemplate = (order) => {
       (item) => `
     <tr>
     <td>${item.name}</td>
-    <td align="center">${item.qty}</td>
-    <td align="right"> $${item.price.toFixed(2)}</td>
+    <td align="center">     ${item.qty}</td>
+    <td align="right"> R$${item.price.toFixed(2)}</td>
     </tr>
   `
     )
@@ -125,7 +125,7 @@ export const OrderEmailTemplate = (order) => {
   return `<h1>Agradecemos a preferencia</h1>
   <p> Olá ${order.shippingAddress.fullName.split(' ', 1)}, obrigado por escolher a GAZZ.</p>
   <p>Confira abaixo os detalhes do seu pedido [ ID: ${order._id}]  </p>
-  <h2> Pedido ${order._id} </h2>
+  <h2> Pedido  </h2>
   <table>
   <thead>
   <tr>
@@ -180,6 +180,22 @@ export const OrderEmailTemplate = (order) => {
   <p>
   Obrigado por comprar conosco!
   </p>
+  `;
+};
+
+
+export const rastreioOrderTemplate = (order) => {
+  return `
+  <h1> Olá ${order.shippingAddress.fullName.split(' ', 1)}</h1>
+
+ 
+
+  <p>O seu pacote já foi preparado para envio e já se encontra nas instalações da transportadora. Fique de olho que em breve o seu pedido estará chegando até você! <p/>
+ 
+  <p>
+
+  <p>Codigo Para Rastreio: <strong> ${order.codRastreio} </strong>
+  
   `;
 };
 
