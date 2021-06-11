@@ -1,4 +1,4 @@
-import React, { useEffect }  from 'react';
+import React, { useEffect, useState }  from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Link } from 'react-router-dom';
@@ -8,18 +8,20 @@ import MessageBox from '../components/MessageBox';
 
 export default function Carrinho(props) {
 
+  const [tamanho,setTamanho] = useState('Único');
   const productId = props.match.params.id;
   const qty = props.location.search
     ? Number(props.location.search.split('=')[1])
     : 1;
+  const [qtd,setQtd] = useState(1);
   const cart = useSelector((state) => state.cart);
   const { cartItems, error } = cart;
   const dispatch = useDispatch();
   useEffect(() => {
     if (productId) {
-      dispatch(addToCart(productId, qty));
+      dispatch(addToCart(productId, qtd,tamanho));
     }
-  }, [dispatch, productId, qty]);
+  }, [dispatch, productId, qtd,tamanho]);
 
   const removeFromCartHandler = (id) => {
     // delete action
@@ -30,7 +32,20 @@ export default function Carrinho(props) {
     props.history.push('/login?redirect=entrega');
   };
 
+  
+
  
+
+  function addCart (id,qtd,tamanho){
+    setQtd(qtd)
+    setTamanho(tamanho)
+    dispatch(
+      addToCart(id, Number(qtd),tamanho)
+    )
+
+  }
+ 
+  
 
   return (
     <div>
@@ -59,11 +74,8 @@ export default function Carrinho(props) {
           <span  style={{'margin-right':'10%'}} className='praPc'>  {item.name} </span>
 
          <span  style={{'margin-right':'15%'}} className='praPc'> Quantidade <select
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
+                      defaultValue={qtd}
+                      onChange={(e) => addCart(item.product,e.target.value,tamanho)
                       }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
@@ -81,25 +93,39 @@ export default function Carrinho(props) {
              
 
             <span  style={{'margin-right':'20%'}} className='praPc' >Tamanho 
-            <select>
+            <select   defaultValue={tamanho}
+                      onChange={(e) => addCart(item.product,qtd,e.target.value)
+                      }>
+
+                       {
+                          !item.tamanhosDisponiveis[0].p &&
+                          !item.tamanhosDisponiveis[0].m &&
+                          !item.tamanhosDisponiveis[0].g &&
+                          !item.tamanhosDisponiveis[0].num38 &&
+                          !item.tamanhosDisponiveis[0].num39 &&
+                          !item.tamanhosDisponiveis[0].num40 &&
+                          
+                          <option> Tamanho Único </option> 
+
+                      }
 
                       {item.tamanhosDisponiveis[0].p &&
-                        <option> P </option> 
+                        <option value='P' > P </option> 
                       }
                       {item.tamanhosDisponiveis[0].m &&
-                        <option> M </option> 
+                        <option value='M'> M </option> 
                       }
                       {item.tamanhosDisponiveis[0].g &&
-                        <option> G </option> 
+                        <option value='G'> G </option> 
                       }
                       {item.tamanhosDisponiveis[0].num38 &&
-                        <option> 38 </option> 
+                        <option value='38'> 38 </option> 
                       }
                       {item.tamanhosDisponiveis[0].num39 &&
-                        <option> 39 </option> 
+                        <option value='39'> 39 </option> 
                       }
                       {item.tamanhosDisponiveis[0].num40 &&
-                        <option> 40 </option> 
+                        <option value='40'> 40 </option> 
                       }
                  
                      
@@ -119,12 +145,9 @@ export default function Carrinho(props) {
             </div>
 
             <span  style={{'margin-right':'10%'}} > Quantidade <select
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
-                      }
+                       defaultValue={qtd}
+                       onChange={(e) => addCart(item.product,e.target.value,tamanho)
+                       }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -136,7 +159,22 @@ export default function Carrinho(props) {
 
             <div>
             <span  style={{'margin-right':'10%'}} >Tamanho 
-            <select>
+            <select
+            defaultValue={tamanho}
+                      onChange={(e) => addCart(item.product,qtd,e.target.value)
+                      }>
+
+              {
+                  !item.tamanhosDisponiveis[0].p &&
+                  !item.tamanhosDisponiveis[0].m &&
+                  !item.tamanhosDisponiveis[0].g &&
+                  !item.tamanhosDisponiveis[0].num38 &&
+                  !item.tamanhosDisponiveis[0].num39 &&
+                  !item.tamanhosDisponiveis[0].num40 &&
+                  
+                  <option> Tamanho Único </option> 
+
+              }
 
               {item.tamanhosDisponiveis[0].p &&
                 <option> P </option> 
