@@ -146,7 +146,10 @@ useEffect(() => {
             </div>
           ) :
           (
+            <>
             <Link to='login' class="w3-bar-item w3-button w3-padding">Entrar</Link>
+            <Link to='register' class="w3-bar-item w3-button w3-padding">Criar Conta</Link>
+            </>
           )
         }
 
