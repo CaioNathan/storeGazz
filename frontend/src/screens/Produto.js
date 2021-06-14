@@ -438,6 +438,25 @@ export default function Produto(props) {
          <b>G </b>
         }
 
+        {product.tamanhosDisponiveis[0].gg &&
+         <b>GG </b>
+        }
+
+        {product.tamanhosDisponiveis[0].num34 &&
+        <b>34 </b>
+        }
+         {product.tamanhosDisponiveis[0].num35 &&
+        <b>35 </b>
+        }
+         {product.tamanhosDisponiveis[0].num36 &&
+         <b>36 </b>
+        }
+
+        {product.tamanhosDisponiveis[0].num37 &&
+         <b>37 </b>
+        }
+
+
         {product.tamanhosDisponiveis[0].num38 &&
         <b>38 </b>
         }
@@ -446,6 +465,18 @@ export default function Produto(props) {
         }
          {product.tamanhosDisponiveis[0].num40 &&
          <b>40 </b>
+        }
+          {product.tamanhosDisponiveis[0].num41 &&
+         <b>41 </b>
+        }
+          {product.tamanhosDisponiveis[0].num42 &&
+         <b>42 </b>
+        }
+          {product.tamanhosDisponiveis[0].num43 &&
+         <b>43 </b>
+        }
+          {product.tamanhosDisponiveis[0].num44 &&
+         <b>44 </b>
         }
         
         

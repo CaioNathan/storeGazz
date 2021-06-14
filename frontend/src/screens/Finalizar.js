@@ -167,7 +167,7 @@ export default function Finalizar(props) {
       </div>
 
       <div>
-      <span  style={{'margin-right':'10%'}}  >Tamanho - {item.tamanho} </span>
+      <span  style={{'margin-right':'10%'}}  > Tamanho - {item.tamanho} </span>
       </div>
 
       

@@ -25,9 +25,18 @@ export default function EditarProduto(props) {
   const [p,setP] = useState('');
   const [m,setM] = useState('');
   const [g,setG] = useState('');
+  const [gg,setGg] = useState('');
+  const [num34,setNum34] = useState('');
+  const [num35,setNum35] = useState('');
+  const [num36,setNum36] = useState('');
+  const [num37,setNum37] = useState('');
   const [num38,setNum38] = useState('');
   const [num39,setNum39] = useState('');
   const [num40,setNum40] = useState('');
+  const [num41,setNum41] = useState('');
+  const [num42,setNum42] = useState('');
+  const [num43,setNum43] = useState('');
+  const [num44,setNum44] = useState('');
   
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -91,7 +100,12 @@ export default function EditarProduto(props) {
         productImages4, 
         productImages5, 
         condicao,
-        tamanhosDisponiveis:{p:p,m:m,g:g,num38:num38,num39:num39,num40:num40 }, 
+        tamanhosDisponiveis:{
+          p:p,m:m,g:g,gg:gg,
+          num34:num34,num35:num35,num36:num36,num37:num37,num38:num38,
+          num39:num39,num40:num40,num41:num41,num42:num42,num43:num43,num44:num44,
+        
+        }, 
       })
     );
   };
@@ -344,9 +358,30 @@ export default function EditarProduto(props) {
             <input type="checkbox" id="g"  checked={g}
                 onChange={(e) => setG(e.target.checked)}/>
             <label for="g"> G </label><br/>
+            <input type="checkbox" id="gg"  checked={gg}
+                onChange={(e) => setGg(e.target.checked)}/>
+            <label for="g"> GG </label><br/>
             </div>
 
-            <div>
+            <div style={{'margin-right':'20px '}}> 
+            <input type="checkbox" id="34"  checked={num34}
+                onChange={(e) => setNum34(e.target.checked)}/>
+            <label for="34"> 34 </label><br/>
+           
+            <input type="checkbox" id="35"  checked={num35}
+                onChange={(e) => setNum35(e.target.checked)}/>
+            <label for="35"> 35 </label><br/>
+
+            <input type="checkbox" id="36"  checked={num36}
+                onChange={(e) => setNum36(e.target.checked)}/>
+            <label for="36"> 36 </label><br/>
+
+            <input type="checkbox" id="37"  checked={num37}
+                onChange={(e) => setNum37(e.target.checked)}/>
+            <label for="37"> 37 </label><br/>
+            </div>
+
+            <div style={{'margin-right':'20px '}}>
             <input type="checkbox" id="38"  checked={num38}
                 onChange={(e) => setNum38(e.target.checked)}/>
             <label for="38"> 38 </label><br/>
@@ -358,6 +393,26 @@ export default function EditarProduto(props) {
             <input type="checkbox" id="40"  checked={num40}
                 onChange={(e) => setNum40(e.target.checked)}/>
             <label for="40"> 40 </label><br/>
+
+            <input type="checkbox" id="41"  checked={num41}
+                onChange={(e) => setNum41(e.target.checked)}/>
+            <label for="40"> 41 </label><br/>
+            </div>
+
+            <div >
+            <input type="checkbox" id="42"  checked={num42}
+                onChange={(e) => setNum42(e.target.checked)}/>
+            <label for="42"> 42 </label><br/>
+           
+            <input type="checkbox" id="43"  checked={num43}
+                onChange={(e) => setNum43(e.target.checked)}/>
+            <label for="43"> 43 </label><br/>
+
+            <input type="checkbox" id="44"  checked={num44}
+                onChange={(e) => setNum44(e.target.checked)}/>
+            <label for="44"> 44 </label><br/>
+
+           
             </div>
         </div>
       </div>

@@ -118,6 +118,21 @@ export default function Carrinho(props) {
                       {item.tamanhosDisponiveis[0].g &&
                         <option value='G'> G </option> 
                       }
+                      {item.tamanhosDisponiveis[0].gg &&
+                        <option value='GG'> GG </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num34 &&
+                        <option value='34'> 34 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num35 &&
+                        <option value='35'> 35 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num36 &&
+                        <option value='36'> 36 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num37 &&
+                        <option value='37'> 37 </option> 
+                      }
                       {item.tamanhosDisponiveis[0].num38 &&
                         <option value='38'> 38 </option> 
                       }
@@ -126,6 +141,18 @@ export default function Carrinho(props) {
                       }
                       {item.tamanhosDisponiveis[0].num40 &&
                         <option value='40'> 40 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num41 &&
+                        <option value='41'> 41 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num42 &&
+                        <option value='42'> 42 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num43 &&
+                        <option value='43'> 43 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num44 &&
+                        <option value='44'> 44 </option> 
                       }
                  
                      
@@ -164,38 +191,63 @@ export default function Carrinho(props) {
                       onChange={(e) => addCart(item.product,qtd,e.target.value)
                       }>
 
-              {
-                  !item.tamanhosDisponiveis[0].p &&
-                  !item.tamanhosDisponiveis[0].m &&
-                  !item.tamanhosDisponiveis[0].g &&
-                  !item.tamanhosDisponiveis[0].num38 &&
-                  !item.tamanhosDisponiveis[0].num39 &&
-                  !item.tamanhosDisponiveis[0].num40 &&
-                  
-                  <option> Tamanho Único </option> 
+{
+                          !item.tamanhosDisponiveis[0].p &&
+                          !item.tamanhosDisponiveis[0].m &&
+                          !item.tamanhosDisponiveis[0].g &&
+                          !item.tamanhosDisponiveis[0].num38 &&
+                          !item.tamanhosDisponiveis[0].num39 &&
+                          !item.tamanhosDisponiveis[0].num40 &&
+                          
+                          <option> Tamanho Único </option> 
 
-              }
+                      }
 
-              {item.tamanhosDisponiveis[0].p &&
-                <option> P </option> 
-              }
-              {item.tamanhosDisponiveis[0].m &&
-                <option> M </option> 
-              }
-              {item.tamanhosDisponiveis[0].g &&
-                <option> G </option> 
-              }
-              {item.tamanhosDisponiveis[0].num38 &&
-                <option> 38 </option> 
-              }
-              {item.tamanhosDisponiveis[0].num39 &&
-                <option> 39 </option> 
-              }
-              {item.tamanhosDisponiveis[0].num40 &&
-                <option> 40 </option> 
-              }
-
-
+                      {item.tamanhosDisponiveis[0].p &&
+                        <option value='P' > P </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].m &&
+                        <option value='M'> M </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].g &&
+                        <option value='G'> G </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].gg &&
+                        <option value='GG'> GG </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num34 &&
+                        <option value='34'> 34 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num35 &&
+                        <option value='35'> 35 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num36 &&
+                        <option value='36'> 36 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num37 &&
+                        <option value='37'> 37 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num38 &&
+                        <option value='38'> 38 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num39 &&
+                        <option value='39'> 39 </option> 
+                      }
+                      {item.tamanhosDisponiveis[0].num40 &&
+                        <option value='40'> 40 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num41 &&
+                        <option value='41'> 41 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num42 &&
+                        <option value='42'> 42 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num43 &&
+                        <option value='43'> 43 </option> 
+                      }
+                       {item.tamanhosDisponiveis[0].num44 &&
+                        <option value='44'> 44 </option> 
+                      }
 
               </select>
             

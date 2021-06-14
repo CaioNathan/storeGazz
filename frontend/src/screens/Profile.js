@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { detailsUser, updateUserProfile } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -57,7 +58,9 @@ export default function ProfileScreen() {
 
 <div class="w3-container"  >
     <h1 class="w3-center w3-text-blue">
+      <Link to='/'>
     <img src={require("../assets/gazc.png")} className='imgLogin' />
+    </Link>
     </h1>
 
       <form className="form" onSubmit={submitHandler}>
@@ -120,8 +123,12 @@ export default function ProfileScreen() {
             </div>
            
             <div>
-              <label />
-              <button className="primary" type="submit">
+              
+              <Link to='/'>
+          <button class="w3-button">  Voltar para o Inicio </button>
+          </Link>
+          <label />
+              <button className="w3-button w3-green" type="submit">
                 Editar
               </button>
             </div>
