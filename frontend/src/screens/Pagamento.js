@@ -42,7 +42,7 @@ export default function Pagamento(props) {
               onChange={(e) => setPaymentMethod(e.target.value)}/>
       </div>
       <div class="w3-section">
-        <label>Transferencia </label>
+        <label>Transferência/Pix </label>
         <input class="w3-input w3-border" type="radio"
               id="tranfer"
               value="Transferência/Pix"

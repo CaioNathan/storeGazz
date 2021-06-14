@@ -75,9 +75,18 @@ export default function EditarProduto(props) {
       setP(product.tamanhosDisponiveis[0].p)
       setM(product.tamanhosDisponiveis[0].m)
       setG(product.tamanhosDisponiveis[0].g)
+      setGg(product.tamanhosDisponiveis[0].gg)
+      setNum34(product.tamanhosDisponiveis[0].num34)
+      setNum35(product.tamanhosDisponiveis[0].num35)
+      setNum36(product.tamanhosDisponiveis[0].num36)
+      setNum37(product.tamanhosDisponiveis[0].num37)
       setNum38(product.tamanhosDisponiveis[0].num38)
       setNum39(product.tamanhosDisponiveis[0].num39)
       setNum40(product.tamanhosDisponiveis[0].num40)
+      setNum41(product.tamanhosDisponiveis[0].num41)
+      setNum42(product.tamanhosDisponiveis[0].num42)
+      setNum43(product.tamanhosDisponiveis[0].num43)
+      setNum44(product.tamanhosDisponiveis[0].num44)
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
   const submitHandler = (e) => {
