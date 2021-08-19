@@ -13,7 +13,7 @@ export default function Product(props) {
       <div class="w3-container">
       <div class="w3-display-container">
       <Link to={`/produto/${product._id}`}>
-         <img src={product.image} className='img' style={{"width":"220px","height":"230px"}} /> 
+         <img src={product.image} className='img' style={{"max-width":"220px","max-height":"230px"}} /> 
       </Link>
           
           <div class="w3-display-middle w3-display-hover">
