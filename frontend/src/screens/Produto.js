@@ -359,7 +359,7 @@ export default function Produto(props) {
     <div class="w3-display-container mySlides" id='imagem1'hidden={false}>
     <img src={product.image} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides2}>Imagem 1</span>
+        
       </div>
     </div>
   }
@@ -367,25 +367,25 @@ export default function Produto(props) {
     <div class="w3-display-container mySlides" id='imagem2' hidden={true}>
     <img src={product.productImages1} className='img'/>
       <div class="w3-display-toplefrtw3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides3}>Imagem 2</span>
+        
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem3' hidden={true}>
     <img src={product.productImages2} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides4}>Imagem 3</span>
+        
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem4' hidden={true}>
     <img src={product.productImages3} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides5}>Imagem 4</span>
+       
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem5' hidden={true}>
     <img src={product.productImages4} className='img'/>
       <div class="w3-display-topleft w3-container w3-padding-32">
-        <span class="w3-white w3-padding-large w3-animate-bottom" onClick={showSlides1}>Imagem 5</span>
+       
       </div>
     </div>
 
@@ -423,7 +423,7 @@ export default function Produto(props) {
 
   <div class="w3-row w3-container">
     <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">{product.name}</span>
+      <span class="w3-xlarge  w3-border-dark-grey w3-padding-16">{product.name}</span>
     </div>
     <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
       <h3>Tamanhos</h3>
