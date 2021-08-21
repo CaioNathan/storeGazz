@@ -218,12 +218,12 @@ useEffect(() => {
 
   <div class="w3-display-container w3-container">
   <h2>Destaque </h2>
-    <img src={require("../assets/news.png")} className='img'/> 
+    <img src={require("../assets/news.png")} className='img'style={{ "margin-left":"90px","height":"500px", "width":"800px"}}/> 
     <div class="w3-display-topleft w3-text-white">
-      <h1 class="w3-jumbo w3-hide-small" style={{'margin-top':"24px"}}>Nike Air Max 2090</h1>
-      <h1 class="w3-hide-large w3-hide-medium" style={{'margin-top':"30px"}}>Nike Air Max 2090</h1>
-      <h1 class="w3-hide-small">R$419,99</h1>
-      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">Comprar</a></p>
+      <h1 class="w3-jumbo w3-hide-small" style={{'margin-top':"24px" ,"margin-left":"100px" }}>Nike Air Max 2090</h1>
+      <h1 class="w3-hide-large w3-hide-medium" style={{'margin-top':"30px","margin-left":"100px"}}>Nike Air Max 2090</h1>
+      <h1 class="w3-hide-small" style={{"margin-left":"120px" }}>R$419,99</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large" style={{"margin-left":"120px" }}>Comprar</a></p>
     </div>
   </div>
 

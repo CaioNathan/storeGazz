@@ -357,7 +357,7 @@ export default function Produto(props) {
   <div class="w3-container" > 
   { product.image !== 'Novo' &&
     <div class="w3-display-container mySlides" id='imagem1'hidden={false}>
-    <img src={product.image} className='img'/>
+    <img src={product.image} className='img' style={{"max-height":"380px","max-width":"auto"}}/>
       <div class="w3-display-topleft w3-container w3-padding-32">
         
       </div>
