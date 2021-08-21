@@ -365,25 +365,25 @@ export default function Produto(props) {
   }
     
     <div class="w3-display-container mySlides" id='imagem2' hidden={true}>
-    <img src={product.productImages1} className='img'/>
+    <img src={product.productImages1} className='img' style={{"max-height":"380px","max-width":"auto"}}/>
       <div class="w3-display-toplefrtw3-container w3-padding-32">
         
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem3' hidden={true}>
-    <img src={product.productImages2} className='img'/>
+    <img src={product.productImages2} className='img' style={{"max-height":"380px","max-width":"auto"}}/>
       <div class="w3-display-topleft w3-container w3-padding-32">
         
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem4' hidden={true}>
-    <img src={product.productImages3} className='img'/>
+    <img src={product.productImages3} className='img' style={{"max-height":"380px","max-width":"auto"}}/>
       <div class="w3-display-topleft w3-container w3-padding-32">
        
       </div>
     </div>
     <div class="w3-display-container mySlides" id='imagem5' hidden={true}>
-    <img src={product.productImages4} className='img'/>
+    <img src={product.productImages4} className='img' style={{"max-height":"380px","max-width":"auto"}}/>
       <div class="w3-display-topleft w3-container w3-padding-32">
        
       </div>
